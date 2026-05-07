@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx serve public",
     "start": "npx serve public",
-    "build": "echo 'Static clone is ready in public/'",
+    "build": "rm -rf dist && cp -r public dist",
     "preview": "npx serve public"
   },
   "dependencies": {
