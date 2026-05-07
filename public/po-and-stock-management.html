@@ -1,0 +1,2556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PO And Stock Management</title>
+    <link rel="shortcut icon" href="/debug/img/TS-Logo-LArge-1.ico">
+    <meta charset="utf-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--Common meta tag fo all the pages -->
+    <meta name="author" content="H2O Digital">
+    <meta name="subject" content="IT Company">
+    <meta name="owner" content="H2O Digital Pvt. Ltd">
+    <meta name="coverage" content="India">
+    <meta name="Geography" content="H2O Digital Pvt Ltd, #435, 3rd Floor, 27th Main Road, 1st Sector HSR Layout, Bangalore, India - 560102">
+    <meta name="Language" content="English">
+    <meta content="PUBLIC">
+    <meta name="distribution" content="Global">
+    <meta name="audience" content="All">
+    <meta name="revisit-after" content="3 days">
+    <meta name="Robots" content="INDEX,FOLLOW">
+    <meta name="country" content="India">
+
+    
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="/debug/css/style.css?ver=4">
+    <link rel="stylesheet" href="/debug/css/product_page_style.css">
+    <link rel="stylesheet" href="/debug/css/animate.min.css">
+    <link rel="stylesheet" href="/debug/css/blogs.css">
+    <link rel="stylesheet" href="/debug/css/post.css">
+
+
+    <link rel="stylesheet" href="/debug/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/debug/css/owl.theme.default.min.css">
+
+    <script src="/debug/js/owl.carousel.min.js"></script>
+
+    <!--FONT SIZES-->
+        <!--Montserrat-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
+    <!--FONT SIZES-->
+
+	<link rel="stylesheet" href="/debug/css/jssocials.css">
+	<link rel="stylesheet" href="/debug/css/jssocials-theme-classic.css">
+
+    <!--AOS(animate on scroll)-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Ek+Mukta" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-79208226-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-79208226-1');
+    </script>
+	<!-- Mouseflow Google Analytics -->
+	<script>
+    window._mfq = window._mfq || [];
+    (function() {
+        var mf = document.createElement("script");
+        mf.type = "text/javascript"; mf.async = true;
+        mf.src = "//cdn.mouseflow.com/projects/380dd719-17d7-4e71-967e-c4c3ac6f1bb9.js";
+        document.getElementsByTagName("head")[0].appendChild(mf);
+    })();
+    </script>
+
+<style>
+
+    #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: #399e21;
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 9999;
+        left: 50%;
+        bottom: 30px;
+        font-size: 17px;
+    }
+
+    #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+    #snackbar_error {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: #FF5733;
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 9999;
+        left: 50%;
+        bottom: 30px;
+        font-size: 17px;
+    }
+
+    #snackbar_error.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+    .show_more {
+        color: blue;
+        cursor: pointer;
+    }
+    .pagination {
+        background-color: #FFFFFF;
+    }
+
+</style>
+    <script>
+        function show_snackbar(e) {
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            $('#snackbar').html(e);
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
+        function show_snackbar_error(e) {
+            var x = document.getElementById("snackbar_error");
+            x.className = "show";
+            $('#snackbar_error').html(e);
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
+    </script>
+
+<script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@id": "#product",
+"@type": "Product",
+"name": "H2O Digital Pvt. Ltd.",
+"description": " The Bangalore's #1 🏆 Software and Mobile App Development Company. H2O Digital builds custom software solutions for businesses worldwide. Call Us today for a free consultation.  ",
+"logo": " /debug/img/h2o-logo.png  ",
+"url": " / ",
+"aggregateRating": {
+"@type": "AggregateRating",
+"ratingValue": "4.8",
+"reviewCount": "786"
+},
+"audience":{
+"@type":"audience",
+"description":"786 Reviews",
+"audienceType" : "IT and Business Companies"
+}
+}
+</script>
+</head>
+<body>
+<div id="snackbar"></div>
+<div id="snackbar_error"></div>
+
+<!--=========Navbar=============-->
+
+
+<!--CONTACT US POP UP FORM-->
+<button class="btn btn-common_white mt-sm-3 px-4 text-uppercase open_modal_onload d-none" data-toggle="modal" data-target="#quote-request">
+
+</button>
+
+<div class="container-fluid custom-container top-header">
+    <div class="row">
+        <div class="col-sm-4 col-md-3">
+            <div class="col-12 share-icons text-center text-md-left">
+                <a href="https://www.facebook.com/h2o-digital/" target="_blank">
+                    <img src="/debug/img/facebook.svg" alt="facebook" class="img-fluid mr-sm-1 mr-md-2">
+                </a>
+                <a href="https://twitter.com/H2O DIGITAL_BNGLR" target="_blank">
+                    <img src="/debug/img/x_twitter.png" alt="twitter" class="img-fluid mr-sm-1 mr-md-2">
+                </a>
+                <a href="https://in.linkedin.com/company/h2o-digital-pvt-ltd" target="_blank">
+                    <img src="/debug/img/linkedin-1.svg" alt="linkedin" class="img-fluid mr-sm-1 mr-md-2">
+                </a>
+                <a href="https://in.pinterest.com/h2o-digital_pvt_ltd/" target="_blank">
+                    <img src="/debug/img/pinterest.svg" alt="pinterest" class="img-fluid mr-sm-1 mr-md-2">
+                </a>
+                <a href="https://www.instagram.com/h2o-digital_pvt_ltd/" target="_blank">
+                    <img src="/debug/img/instagram.svg" alt="instagram" class="img-fluid mr-sm-1 mr-md-2">
+                </a>
+                <a href="https://www.youtube.com/channel/UC3MLSIMJdEamt0Q0iQ21Omg" target="_blank">
+                    <img src="/debug/img/youtube.svg" alt="youtube" class="img-fluid mr-sm-1 mr-md-2">
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-8 col-md-9 text-center text-md-right p-0">
+
+            <a class="whatsapp_web" href="https://wa.me/16108800144?text=I%20want%20to%20know%20more%20details%20about%20H2O Digital%20Services" target="_blank" style="background-color: white;border-radius: 5px;">
+                <img src="/debug/img/usa_watsapp.png" class="whatsappImg" alt="whatsapp" title="WhatsApp">
+            </a>
+            <a class="contact-info mob first_nav_content mr-md-2" href="tel:+16108800144">
+                 +1 610 880 0144
+            </a>
+           
+            <a class="whatsapp_web" href="https://wa.me/971507557789?text=I%20want%20to%20know%20more%20details%20about%20H2O Digital%20Services" target="_blank" style="background-color: white;border-radius: 5px;">
+                <img src="/debug/img/dubai_whatapp.png" class="whatsappImg" alt="whatsapp" title="WhatsApp">
+            </a>
+            <a class="contact-info mob first_nav_content mr-md-2" href="tel:+971507557789">
+                +971 507557789
+            </a>
+            
+            <a class="whatsapp_web" href="https://wa.me/918884739988?text=I%20want%20to%20know%20more%20details%20about%20H2O Digital%20Services" target="_blank" style="background-color: white;border-radius: 5px;">
+                <img src="/debug/img/india_watsapp.png" class="whatsappImg" alt="whatsapp" title="WhatsApp">
+            </a>
+            <a class="contact-info mob first_nav_content mr-md-2" href="tel:+918884739988">
+                +91 8884 739 988
+            </a>
+            <a class="contact-info navbar_mob_email first_nav_content mr-2" href="/cdn-cgi/l/email-protection#abc2c5cdc4ebdfcec8c3cad8c4cddf85c8c4c6">
+                <img src="/debug/img/email-3.svg" class="img-fluid mailIcon" alt="email">
+                <span class="__cf_email__" data-cfemail="e38a8d858ca39786808b82908c8597cd808c8e">[email&#160;protected]</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Navbar -->
+
+<nav class="navbar navbar-expand-md navbar-light sticky-top second-navbar">
+        <a class="navbar-brand" href="/">
+            <img src="/debug/img/h2o-logo.png" class="h2o-digital-logo" alt="h2o-digital-logo">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mobile-nav" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto all-nav ul-menu">
+                <li class="nav-item main-nav-item pb-0 navbar-items-mobile">
+                    <a class="nav-link text-dark pb-2" href="/">Home</a>
+                </li>
+                <li class="nav-item main-nav-item pb-0 navbar-items-mobile">
+                    <a class="nav-link text-dark pb-2" href="/about-us">About Us</a>
+                </li>
+                <li class="nav-item main-nav-item pb-0 navbar-items-mobile">
+                    <a class="nav-link text-dark pb-2" href="/news">News</a>
+                </li>
+                <li class="nav-item dropdown main-nav-item pb-0 navbar-items-mobile clickable-href">
+                    <a  class="nav-link text-dark tech-anchor clickable pb-2 href-link" href="javascript:void(0);" id="productsNavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="window.location.href='/products'">
+                    Products
+                   </a>
+                    <div class="dropdown-menu new-tech product__list animate slideIn" aria-labelledby="productsNavbarDropdown">
+                        <div class="container py-2">
+                            <div class="row li-list-style-type">
+								<div class="col-md-3 col-xl-4 sub-menu mb-xl-0 mb-2">
+
+									   <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link prod-more" href="/doctor-click-away">Doctor Click Away</a>
+                                        </li>
+                                     </ul>
+                                </div><div class="col-md-3 col-xl-4 sub-menu mb-xl-0 mb-2">
+
+									   <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link prod-more" href="/school-pnt">School PNT</a>
+                                        </li>
+                                     </ul>
+                                </div><div class="col-md-3 col-xl-4 sub-menu mb-xl-0 mb-2">
+
+									   <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link prod-more" href="/dr-log">Dr. Log</a>
+                                        </li>
+                                     </ul>
+                                </div><div class="col-md-3 col-xl-4 sub-menu mb-xl-0 mb-2">
+
+									   <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link prod-more" href="/e-learning">E-Learning</a>
+                                        </li>
+                                     </ul>
+                                </div><div class="col-md-3 col-xl-4 sub-menu mb-xl-0 mb-2">
+
+									   <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link prod-more" href="/alumni-platform">Alumni Platform</a>
+                                        </li>
+                                     </ul>
+                                </div><div class="col-md-3 col-xl-4 sub-menu mb-xl-0 mb-2">
+
+									   <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link prod-more" href="/po-and-stock-management">PO And Stock Management</a>
+                                        </li>
+                                     </ul>
+                                </div><div class="col-md-3 col-xl-4 sub-menu mb-xl-0 mb-2">
+
+									   <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link prod-more" href="/hrms">HRMS</a>
+                                        </li>
+                                     </ul>
+                                </div><div class="col-md-3 col-xl-4 sub-menu mb-xl-0 mb-2">
+
+									   <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link prod-more" href="/e-kart">E Kart</a>
+                                        </li>
+                                     </ul>
+                                </div><div class="col-md-3 col-xl-4 sub-menu mb-xl-0 mb-2">
+
+									   <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link prod-more" href="/employee-leave-management-">Employee Leave Management </a>
+                                        </li>
+                                     </ul>
+                                </div><div class="col-md-3 col-xl-4 sub-menu mb-xl-0 mb-2">
+
+									   <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link prod-more" href="/techacrm-customer-relationship-management-application">TechaCRM(Customer Relationship Management)Application</a>
+                                        </li>
+                                     </ul>
+                                </div><div class="col-md-3 col-xl-4 sub-menu mb-xl-0 mb-2">
+
+									   <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link prod-more" href="/grocery">Grocery</a>
+                                        </li>
+                                     </ul>
+                                </div><div class="col-md-3 col-xl-4 sub-menu mb-xl-0 mb-2">
+
+									   <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link prod-more" href="/matrimony">Matrimony</a>
+                                        </li>
+                                     </ul>
+                                </div><div class="col-md-3 col-xl-4 sub-menu mb-xl-0 mb-2">
+
+									   <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link prod-more" href="/wedlock-planner">Wedlock Planner</a>
+                                        </li>
+                                     </ul>
+                                </div><div class="col-md-3 col-xl-4 sub-menu mb-xl-0 mb-2">
+
+									   <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link prod-more" href="/ocr-optical-character-recognition-scanner-app">OCR(Optical Character Recognition) Scanner App</a>
+                                        </li>
+                                     </ul>
+                                </div>                            </div>
+                        </div>
+                        <!--  /.container  -->
+                    </div>
+                </li>
+                <li class="nav-item main-nav-item pb-0 navbar-items-mobile">
+                    <a class="nav-link text-dark pb-2" href="/clients">Clients</a>
+                </li>
+                <li class="nav-item dropdown tech-li main-nav-item pb-0 navbar-items-mobile">
+                    <a class="nav-link text-dark tech-anchor clickable pb-2" href="#" id="technologyNavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Technology
+                    </a>
+                    <div class="dropdown-menu new-tech animate slideIn" aria-labelledby="technologyNavbarDropdown">
+                        <div class="container py-2">
+                            <div class="row li-list-style-type">
+                                <div class="col-md-3 col-xl-3 sub-menu mb-xl-0 mb-4">
+                                    <h6 class="text-uppercase mb-3">UI DESIGN</h6>
+                                    <ul class="nav flex-column ul-sub-list service-mob">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/html-css">HTML/HTML5, CSS3</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/angularjs-development-company">AngularJS, JS</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/ajax-json">AJAX/JSON</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/jquery-developers">jQuery, jQuery UI</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/drupal-development-company">Drupal</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/joomla-development-company">Joomla</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/wordpress-development-company">WordPress</a>
+                                        </li>
+                                    </ul>
+
+                                    <h6 class="text-uppercase mb-3">Cloud Computing</h6>
+                                    <ul class="nav flex-column ul-sub-list service-mob">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/amazon-web-services-cloud-deployment">AWS Development</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/google-cloud-computing-deployment-services">Google Cloud</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/goDaddy-deployment-services-in-bangalore">Go Daddy</a>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+
+
+                                <!-- /.col-md-4  -->
+                                <div class="col-md-3 col-xl-3 sub-menu mb-xl-0 mb-4">
+                                    <h6 class="text-uppercase mb-3">SERVER SIDE SCRIPTING</h6>
+                                    <ul class="nav flex-column ul-sub-list service-mob">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/php-development-company-in-bangalore">PHP</a>
+                                        </li>
+                                        <!--<li class="nav-item">
+                                            <a class="nav-link" href="jboss-apace-tomcat">JBoss, Apache Tomcat</a>
+                                        </li>-->
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/j2ee-j2se-swing-servlet">J2EE, J2SE, SWING, Servlet</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/spring-struts-hibernate">Spring, Struts, Hibernate</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/jsp-jsf-apachecfx">JSP, JSF, ApacheCXF</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/junit-testng-mockito">JUnit, TestNG, Mockito</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/microsoftvisio-enterprise-architect">Microsoft Visio, Enterprise Architect</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/shell-scripting">Shell</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/perl-scripting">Perl</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/python-developer">Python</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+
+                                <!-- /.col-md-4  -->
+                                <div class="col-md-3 col-xl-3 sub-menu mb-xl-0 mb-4">
+                                    <h6 class="text-uppercase mb-3">Data mining and analytics</h6>
+                                    <ul class="nav flex-column ul-sub-list service-mob">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/oracle-database-design">Database Design: Oracle</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/mysql-database-design">SQL Database</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/redis-developer-bangalore">Redis</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/cassandra-developer-bangalore">Cassandra</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/database-development-mongodb">Database Development: MongoDB</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/sqlserver-database-consulting">Database Consulting: SQL Server</a>
+                                        </li>
+
+                                    </ul>
+
+                                    <h6 class="text-uppercase mb-3">WEB SERVER TECHNOLOGY</h6>
+                                    <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/jboss-web-server">JBOSS</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/apache-server">APACHE</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/tomcat-web-server">TOMCAT</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/internet-information-server">IIS</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-3 col-xl-3 sub-menu mb-xl-0 mb-4">
+                                    <h6 class="text-uppercase mb-3">Testing</h6>
+                                    <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/software-testing-company-in-bangalore">Software Testing</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/software-unit-testing">Unit Testing</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/software-integration-testing">Integration Testing</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/software-system-testing">System Testing</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/automation-deployment-services">Deployment Automation Support</a>
+                                        </li>
+
+                                    </ul>
+
+                                    <h6 class="text-uppercase mb-3">Software Process</h6>
+                                    <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/software-development-life-cycle">SDLC</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--  /.container  -->
+                    </div>
+                </li>
+                <li class="nav-item dropdown service-li main-nav-item pb-0 navbar-items-mobile">
+                    <a class="nav-link text-dark clickable pb-2" href="#" id="servicesNavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Services
+                    </a>
+                    <div class="dropdown-menu new-service animate slideIn" aria-labelledby="servicesNavbarDropdown">
+                        <div class="container py-2">
+                            <div class="row li-list-style-type">
+                                <div class="col-md-3 col-xl-3 sub-menu mb-xl-0 mb-4">
+                                    <h6 class="text-uppercase mb-3">Online Marketing</h6>
+                                    <ul class="nav flex-column ul-sub-list service-mob">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/SEO-SERVICES-Company-Bangalore">SEO Services</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Search-Engine-Marketing-Company-Bangalore">Search Engine Marketing</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Social-Media-Marketing-Company-Bangalore">Social Media Marketing</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/PPC-MANAGEMENT-Company-Bangalore">Pay Per Click Management</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/SEO-COPYWRITING-Services">SEO Copywriting</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/digital-marketing-company-in-bangalore">Digital Marketing</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/BRAND-CONSULTING-SERVICES-Bangalore">Brand Consulting</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/lead-management-system">Lead Management System</a>
+                                        </li>
+                                        <!--<li class="nav-item">
+                                            <a class="nav-link" href="digital-marketing-adword">Digital Market</a>
+                                        </li>-->
+                                    </ul>
+
+                                    <h6 class="text-uppercase mb-3">consultant</h6>
+                                    <ul class="nav flex-column ul-sub-list service-mob">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/netsuite-solution-consultant">NetSuite solution consultant</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/recruitment-service">Recruitment Service</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/sharepoint-development-company-in-bangalore">SharePoint Development</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/software-consultant-in-bangalore">Software Consultant</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                                <!-- /.col-md-4  -->
+                                <div class="col-md-3 col-xl-3 sub-menu mb-xl-0 mb-4">
+                                    <h6 class="text-uppercase mb-3">Web Design & Development</h6>
+                                    <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/website-designing-company-in-Bangalore">Website Design</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Website-Development-Company-in-Bangalore">Website Development</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/crm-software-development">CRM Software Development</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Software-Development-Company-in-Bangalore">Software Development</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Educational-Web-Portal-Development-company">Educational Web Portal Development</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Restaurant-web-portal-development-company">Restaurant Web Portal Development</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/healthcare-portal-development-company">Health Care Portal Development</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/travel-web-portal-development-company">Travel Portal Development</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/real-estate-web-portal-development-company">Real Estate Portal Development</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/e-Commerce-website-development-company-in-Bangalore">E-commerce Website Development</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <!-- /.col-md-4  -->
+                                <div class="col-md-3 col-xl-3 sub-menu mb-xl-0 mb-4">
+                                    <h6 class="text-uppercase mb-3">Mobile Application</h6>
+                                    <ul class="nav flex-column ul-sub-list service-mob">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/mobile-app-development-company-in-Bangalore">Mobile App Development</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Windows-App-Development-company">Windows App Development</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/xamarin-app-development">Xamarin App Development</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Hybrid-App-Development-company">Hybrid App Development</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Native-App-Development-Company">Native App Development</a>
+                                        </li>
+                                    </ul>
+
+                                    <h6 class="text-uppercase mb-3">Creative Design</h6>
+                                    <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/ui-ux-design-company-in-bangalore">UI/UX Design</a>
+                                        </li>
+										<li class="nav-item">
+											<a class="nav-link" href="/logo-design-companies-in-bangalore">Logo Design</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="/brochure-design-companies-in-bangalore">Brochure Design</a>
+										</li>
+                                    </ul>
+
+                                    <h6 class="text-uppercase mb-3">Latest Technology</h6>
+                                    <ul class="nav flex-column ul-sub-list">
+										<li class="nav-item">
+                                           <a href="/machine-learning-companies-in-bangalore" class="nav-link">Machine Learning Services</a>
+                                         </li>
+                                         <li class="nav-item">
+                                          <a href="/artificial-intelligence-company-in-bangalore" class="nav-link">Artificial Intelligence Services</a>
+                                         </li>
+                                        <li class="nav-item">
+                                          <a href="/agentic-ai-development-company" class="nav-link">Agentic AI Development Company</a>
+                                         </li>
+                                         <li class="nav-item">
+                                           <a href="/netsuite-solution-consultant" class="nav-link">NetSuite</a>
+                                         </li>
+                                        <li class="nav-item">
+                                          <a href="/sharepoint-development-company-in-bangalore" class="nav-link">SharePoint</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                                <div class="col-md-3 col-xl-3 sub-menu mb-xl-0 mb-4">
+                                    <!--===SOFTWARE===-->
+                                    <h6 class="text-uppercase mb-3">Software</h6>
+                                    <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/HR-PAYROLL-MANAGEMENT-SOFTWARE-Company">HR and Payroll Management Software</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/JEWELLERY-SOFTWARE-development-company">Jewellery Software</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/CRM-software-development-company-Bangalore">CRM Software</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/real-estate-software-Development-Company">Real Estate Software</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/inventory-software-development-company">Inventory Management Software</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/hospital-management-software-development-company">Hospital Management Software</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/school-management-software-development-company">School Management Software</a>
+                                        </li>
+                                    </ul>
+
+
+                                    <h6 class="text-uppercase my-3">Testing</h6>
+                                    <ul class="nav flex-column ul-sub-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/software-testing-company-in-bangalore">Software Testing</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/testing/security-testing-company-in-bangalore">Security Testing</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/testing/performance-testing-company-in-bangalore">Performance Testing</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--  /.container  -->
+                    </div>
+                </li>
+                <li class="nav-item main-nav-item pb-0 navbar-items-mobile">
+                    <a class="nav-link text-dark pb-2"  href="/careers">Careers</a>
+                </li>
+                <li class="nav-item main-nav-item pb-0 navbar-items-mobile">
+                    <a class="nav-link text-dark pb-2" href="/contact-us">Contact Us</a>
+                </li>
+                <li class="nav-item main-nav-item pb-0 navbar-items-mobile">
+                    <a class="nav-link text-dark pb-2" href="/technology-blogs">Blogs</a>
+                </li>
+                <li class="headerBtn">
+                    <a class="" href="/become-a-partner">
+                        <span>Become a Partner</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<!--<li class="nav-item dropdown">-->
+<!--    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--        Industries-->
+<!--    </a>-->
+<!--    <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--        <a class="dropdown-item" href="--><!--sports-ecommerce-store">Sports eCommerce Store</a>-->
+<!--        <a class="dropdown-item" href="--><!--books-ecommerce-store">Books eCommerce Store</a>-->
+<!--        <a class="dropdown-item" href="--><!--electronics-ecommerce-store">Electronics Ecommerce Store</a>-->
+<!--        <a class="dropdown-item" href="--><!--jewelry-ecommerce-store">Jewelry Ecommerce Store</a>-->
+<!--        <a class="dropdown-item" href="--><!--kitchen-appliances-ecommerce-store">Kitchen Appliances Ecommerce Store</a>-->
+<!--        <a class="dropdown-item" href="--><!--home-appliances-ecommerce-store">Home Appliances Ecommerce Store</a>-->
+<!--    </div>-->
+<!--</li>-->
+
+<!--REMOVE fixed-top from navbar from mobile-->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    $(document).ready(function() {
+        if ($(window).width() <= 767) {
+            $('.second-navbar').removeClass('sticky-top');
+        }
+    });
+
+     $(document).ready(function(){
+         $( ".clickable-href" ).on( "click", function() {
+             
+            });
+     });
+</script>
+
+
+<img src="/debug/img/Vector_Smart_Object30.svg" alt="vector-smart-object" class="back-img img-fluid">
+
+<section class="product_description--cta" xmlns="http://www.w3.org/1999/html">
+    <div class="container">
+        <div class="row" style="height: 35vh;">
+            <div class="col-sm-5 text-center">
+                <h1 class="font-weight-bold vertical-alignment">PO And Stock Management</h1>
+            </div>
+            <div class="col-sm-7 main-image text-center">
+                <img src="/uploads/TS-Logo-LArge-1_(3).png" alt="product page image" width="60%" height="60%" class="product-drlog">
+
+            </div>
+
+        </div>
+		        <div class="hero-text" hidden><br>
+            <h2 class="text-center">Works on Web</h2>
+
+        </div>
+
+        <div class="row mt-4" hidden>
+
+            <div class="col-sm-4 product-demo text-center">
+                <a href="" target="_blank" class="social-btns">
+                    <img src="/debug/img/web.png" alt="Website" class="btn-color social-btn-color" style="width:50%"></a>
+
+            </div>
+			<div class="col-sm-4 gplay text-right" hidden>
+				<a href="" target="_blank" class="social-btns my-md-auto my-3">
+					<img src="/debug/img/Google_play.png" alt="Google play" class="social-btn-color" style="width:50%"></a>
+			</div>
+
+			<div class="col-sm-4 social-btns text-center astore" hidden>
+				<a href="" target="_blank">
+					<img src="/debug/img/App_Store.png" alt="App Store" class="social-btn-color" style="width:50%"></a>
+			</div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ...........................TECHNOLOGIES................................................................ -->
+<section class="seo-page"></section>
+<section class="technology--info technology__margin-0">
+
+    <div class="container-fluid">
+     <div class="row">
+       <div class="col-md-8 col-lg-9">
+        <div class="product-description--div p-4">
+            <div class="row technology_contents-ui">
+                <div class="col-sm-12">
+                    <h2 class="font-weight-bold text-let pb-2 text-center">About PO And Stock Management</h2>
+                </div>
+            </div>
+            <div class="row project-mean">
+                <div class="col-sm-12">
+                    <p class="text-justify px-5 pb-1 mb-0">
+						Purchase Order aims is to provide the solution to vendors.A purchase order, or PO, is an official document issued by a buyer committing to pay the seller for the sale of specific products or services to be delivered in the future.					</p>
+                </div>
+            </div>
+        </div>
+
+        <!--................................TECNOLOGY LIST...........................................................................-->
+
+		        <div class="product-description--div technology-list p-4" >
+
+            <div class="row technology_contents-ui">
+                <div class="col-sm-12">
+                    <h2 class="font-weight-bold text-let pb-2 text-center" style="color:rgb(33, 37, 41);">Features</h2>
+                </div>
+            </div>
+
+            <div class="row">
+				<div class="col-md-6 ">
+                    <div class="product_list">
+                        <ul class="square mb-0">
+                            <li>Dashboard
+</li>
+                        </ul>
+                    </div>
+                </div><div class="col-md-6 ">
+                    <div class="product_list">
+                        <ul class="square mb-0">
+                            <li>Vendors
+</li>
+                        </ul>
+                    </div>
+                </div><div class="col-md-6 ">
+                    <div class="product_list">
+                        <ul class="square mb-0">
+                            <li>Employee
+</li>
+                        </ul>
+                    </div>
+                </div><div class="col-md-6 ">
+                    <div class="product_list">
+                        <ul class="square mb-0">
+                            <li>Inventory
+</li>
+                        </ul>
+                    </div>
+                </div><div class="col-md-6 ">
+                    <div class="product_list">
+                        <ul class="square mb-0">
+                            <li>Setup
+</li>
+                        </ul>
+                    </div>
+                </div><div class="col-md-6 ">
+                    <div class="product_list">
+                        <ul class="square mb-0">
+                            <li>PO
+</li>
+                        </ul>
+                    </div>
+                </div><div class="col-md-6 ">
+                    <div class="product_list">
+                        <ul class="square mb-0">
+                            <li>RMA
+</li>
+                        </ul>
+                    </div>
+                </div><div class="col-md-6 ">
+                    <div class="product_list">
+                        <ul class="square mb-0">
+                            <li>Report</li>
+                        </ul>
+                    </div>
+                </div>            </div>
+
+        </div>
+
+        <!--....................................PRODUCT ENQUIRY...................................-->
+
+		
+        <div class="product-description--div p-4" >
+            <div class="row technology_contents-ui">
+                <div class="col-sm-12">
+                    <h2 class="font-weight-bold text-let pb-2 text-center">What The Project Means For us</h2>
+                </div>
+            </div>
+
+            <div class="row project-mean">
+                <div class="col-sm-12">
+                    <p class="text-justify px-5 pb-3">
+						<div class="row">
+<p>A purchase order, or PO, is an official document issued by a buyer committing to pay the seller for the sale of specific products or services to be delivered in the future.</p>
+</div>
+
+<div class="row">
+<p>The advantage to the buyer is the ability to place an order without immediate payment. From the seller’s perspective, a PO is a way to offer buyers credit without risk, since the buyer is obligated to pay once the products or services have been delivered.</p>
+</div>
+					</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 product-enquiry text-center">
+                    <a href="javascript:void(0);" class="btn-color-parent"  aria-haspopup="true" tabindex="0" data-toggle="modal" data-target="#quote-request">
+                        <input type="button" value="Enquiry" class="py-3 px-5 btn-color">
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!--..........................OUR PRODUCTS...............................................................-->
+		<div class="row technology_contents-ui" hidden>
+                <div class="col-sm-12">
+                    <h2 class="font-weight-bold text-let pb-2 text-center">Our Clients</h2>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-4 card-margin offset-2">
+                        <div class="card card-prod-shadow h-100">
+                            <img class="card-img-top our-prod--images px-5 pt-2 image-shadow-common" src="/debug/img/carelick.png" alt="A H2O Digital Product">
+
+                            <div class="card-body fixed-card-height">
+                                <p class="card-text">Carelick into a respectable and reliable social institution geared towards caring for the needy</p>
+                            </div>
+
+                            <div class="card-body text-center">
+                                <a href="/carelick"  class="btn-color-parent">
+                                    <input type="button" value="Learn More" class="btn-color py-3 px-5 ">
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 card-margin">
+                        <div class="card card-prod-shadow h-100">
+                            <img class="card-img-top our-prod--images px-5 pt-2 image-shadow-common" src="/debug/img/Bravo-bgLogo.png"  alt="A H2O Digital Product">
+
+                            <div class="card-body fixed-card-height">
+                                <p class="card-text">Bravo Pharma has its own diagnostic laboratories and medical centres</p>
+                            </div>
+
+                            <div class="card-body text-center">
+                                <a href="/bravo-pharma"  class="btn-color-parent">
+                                    <input type="button" value="Learn More" class="btn-color py-3 px-5 ">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+             <div class="hide-form"></div>
+            </div>
+          <div class="col-md-4 col-lg-3 order-1 order-md-2">
+	<!--Form-->
+	<form id="contactSeo" class="web_analysis">
+		<div class="row px-3 py-2">
+			<div class="col-12 text-center">
+				<h2 class="mb-0 d-inline-block mb-2">
+					Contact Us
+				</h2>
+			</div>
+			<input hidden type="text" value="/po-and-stock-management" class="form-control" id="" name="lead_url" required>
+
+			<div class="col-12">
+				<div class="form-group">
+					<label for="fName">Name <a style="color: red">*</a></label>
+					<input type="text" class="form-control" name="seo_name" placeholder="Name" required>
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="form-group">
+					<label for="email">Email <a style="color: red">*</a></label>
+					<input type="email" class="form-control" name="seo_email" placeholder="Email" required>
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="form-group">
+					<label for="poh">Phone <a style="color: red">*</a></label>
+					<input type="text" class="form-control" name="seo_phone" placeholder="Phone" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" minlength="10" maxlength="16" required>
+				</div>
+			</div>
+			<!-- <div class="col-12">
+				<div class="form-group">
+					<label for="website">Website</label>
+					<input type="text" class="form-control" name="seo_website">
+				</div>
+			</div> -->
+			<div class="col-12 mb-3">
+				<div class="form-group">
+					<label for="msg">Message</label>
+					<textarea class="form-control" name="seo_message" row="5" placeholder="Message..."></textarea>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="g-recaptcha" data-sitekey="6LfJdP4ZAAAAAHLu7rilqtpQdkdiZo90482PBgLN" style="transform: scale(.9); -webkit-transform: scale(.9); transform-origin: 0 0; -webkit-transform-origin: 0 0;"></div>
+			</div>
+			<div class="col-12">
+				<span class="add_seo_error" style="color:red;"></span>
+				<button type="submit" class="btn w-100 py-1 add_seo_pop_up_button">
+					Submit <span class="add_seo_pop_up_fa_spin_icon"></span>
+				</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+    var controller = 'Welcome';
+    var base_url = '/';
+
+    $(document).ready(function() {
+
+        $("#contactSeo").on('submit', function (e) {
+            $('.add_seo_error').html('');
+            $('.add_seo_pop_up_fa_spin_icon').html('<i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i>\n');
+            $(".add_seo_pop_up_button").attr("disabled", true);
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: base_url + controller + '/add_seo_form',
+                data: new FormData(this),
+                contentType: false,
+                cache: false,
+                processData: false,
+                'dataType': "json",
+                success: function (data) {
+                    if (data.status == 200) {
+                        $('#contactSeo')[0].reset();
+                        show_snackbar(data.data);
+                        $('.close_model').click();
+                        $('.add_seo_error').html('');
+                        $('.add_seo_pop_up_fa_spin_icon').html('');
+                        $(".add_seo_pop_up_button").attr("disabled", false);
+
+                    } else {
+                        $('.add_seo_error').html(data.data);
+                        $('.add_seo_pop_up_fa_spin_icon').html('');
+                        $(".add_seo_pop_up_button").attr("disabled", false);
+                    }
+                }
+            });
+        });
+    });
+
+</script>
+        </div>
+    </div>
+</section>
+
+<script>
+ 
+// fixed form on scrolling
+	$(window).on("scroll", function() {
+		var hT = $('.hide-form').offset().top,
+			hH = $('.hide-form').outerHeight(),
+			sM = $('.seo-page').offset().top,
+			sH = $('.seo-page').outerHeight(),
+			wH = $(window).height(),
+			wS = $(this).scrollTop();
+
+		if (wS > (hT+hH-wH)){
+			$('.web_analysis').removeClass('fixed-form');
+		} else if(wS < sM) {
+			$('.web_analysis').removeClass('fixed-form');
+		} else {
+			$('.web_analysis').addClass('fixed-form');
+		}
+	});
+
+</script>
+
+<style>
+	.close-modal-outside {
+		background-color: rgba(24, 62, 132,.8);
+		color: white !important;
+		font-size: 28px;
+	}
+	.address-sub{
+		font-size: 12px;
+		line-height: 1.5;
+	}
+	.branch-address{
+		line-height: 1 !important;
+	}
+	
+	.modal {
+		transform: scale(0);
+		opacity: 0;
+		-webkit-transition: all .5s linear;
+		-o-transition: all .5s linear;
+		transition: all .5s linear;
+	}
+	.modal.show {
+		opacity: 1;
+		transform: scale(1);
+	}
+	.btn-close-float {
+		background-color: #02326a !important;
+		opacity: 1;
+		color: white;
+		width: 22px;
+		height: 22px;
+		border-radius: 50%;
+		font-size: 12px !important;
+		margin-right: -50%;
+		margin-top: -50%;
+	}
+
+</style>
+<!--Enquiry form (Pop Up)-->
+<div class="modal fade-scale" id="Popup-enquiry">
+    <div class="modal-dialog modal-dialog-centered" style="transform:translateY(0px) scaleX(1) scaleY(1) translateX(0px)">
+        <div class="modal-content">
+
+                <div class="modal-header border-0 py-2 mb-3" style="background-color: rgb(2, 80, 169);;color: #ffffff;">
+                    <div class="row w-100">
+                        <div class="col-12 text-center">
+                            <p class="apply-now text-center">Query</p>
+                        </div>
+                    </div>
+                    <button type="button" class="close close_btn close_model" data-dismiss="modal">X</button>
+                </div>
+
+            <form id="enquiry_pop_up_add">
+
+				<input hidden type="text" value="/po-and-stock-management" class="form-control" id="usr" name="lead_url" required>
+
+				<input type="number" class="form-control" value="2" name="enquiry" hidden>
+
+                <div class="px-3">
+                    <div class="row pt-3">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control pop_up_model" id="contact_name" placeholder="Name" name="enquiry_name_pop_up" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control pop_up_model" name="enquiry_phone_pop_up" minlength="10" maxlength="16" onkeypress='validate(event)' id="mobile_num" placeholder="Mobile Number" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control pop_up_model" id="email" placeholder="Email" name="enquiry_email_pop_up" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <select name="enquiry_services_pop_up" class="form-control pop_up_model">
+                                    <option value="0">Select Services</option>
+                                    <option value="1">Online Marketing</option>
+                                    <option value="2">Web Design & Development</option>
+                                    <option value="3">Mobile Application</option>
+                                    <option value="4">Software Development</option>
+                                    <option value="5">Creative Design</option>
+                                    <option value="6">Others</option>
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <textarea class="form-control services_head" name="enquiry_message_pop_up" placeholder="Your Message...." rows="3" style="resize: none"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-4">
+                        <span style="color: red" class="add_error"></span>
+                        <div class="col-12 text-center">
+                            <div class="form-group">
+                                <button type="submit" class="btn form-control pop_up_contact_us add_enquiry_pop_up_button">Contact Us<span class="add_enquiry_pop_up_fa_spin_icon"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!--Quote Request-->
+<div class="modal fade" id="quote-request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-width" role="document" style="padding-top: 4%">
+        <div class="modal-content px-0">
+            <div class="modal-body p-0">
+                <div class="col-12">
+                    <div class="row modal-height">
+                        <button type="button" class="close popup-close" data-dismiss="modal">&times;</button>
+                        <div class="col-md-6" style="background-image: linear-gradient(to top, #166ce7, #5990f7);">
+                            <div class="col-12 pt-3 col-pad-0">
+                                <h3 class="text-light pop-up-title">
+                                    <b>Get A Free Quote Now</b>
+                                </h3>
+                                <p class="text-light">
+                                    Please complete this form to be connected by one of our experts.
+                                </p>
+                            </div>
+                            <div class="row">
+                                <div class="circle-login">
+                                    <img src="/debug/img/10-work@2x.png" class="d-flex m-auto" alt="pop-up form image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 bg-light p-2">
+                            <!-- Form -->
+                            <form id="home_contact" style="color: #757575; margin-top: 4rem">
+
+                                <input hidden type="text" value="/po-and-stock-management" class="form-control" id="usr" name="lead_url" required>
+
+                                <input type="number" class="form-control" value="1" name="enquiry" hidden>
+
+                                <div class="form-group">
+                                    <input type="text" id="firstName" class="form-control" name="contact_fname" placeholder="Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="email" class="form-control" name="contact_email" placeholder="Email Id"  required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="contact_phone" placeholder="Phone Number" minlength="10" maxlength="16" onkeypress='validate(event)' required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="3" id="comment" name="contact_message" placeholder="Enter Message"></textarea>
+                                </div>
+
+								<div class="g-recaptcha" data-sitekey="6LfJdP4ZAAAAAHLu7rilqtpQdkdiZo90482PBgLN"></div>
+
+                                <div class="col-12 mt-2">
+                                    <div class="row">
+                                        <span class="add_home_contact_error" style="color: red"></span>
+                                        <button class="btn text-uppercase btn-submit-modal text-light ml-auto add_home_contact_pop_up_button" type="submit">
+                                            Submit <span class="add_home_contact_pop_up_fa_spin_icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- Form -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Quote Request-->
+<div class="modal" id="share_url" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-width-47 modal-dialog-centered" role="document" style="padding-top: 4%">
+        <div class="modal-content px-0">
+            <div class="modal-body p-0">
+                <div class="col-12">
+                    <div class="row">
+                        <button type="button" class="close popup-close" data-dismiss="modal">&times;</button>
+                        <div class="col-12 text-center">
+                            <h5 class="py-3 border_bottom">Share with friends</h5>
+                        </div>
+                        <div class="col-12">
+                             <div class="col-12 share-icons text-center  py-5">
+                <a href="https://www.facebook.com/login/" target="_blank">
+                    <img src="/debug/img/facebook.svg" alt="facebook" class="img-fluid mr-sm-1 mr-md-2">
+                </a>
+                <a href="https://twitter.com/i/flow/login" target="_blank">
+                    <img src="/debug/img/twitter-1.svg" alt="twitter" class="img-fluid mr-sm-1 mr-md-2">
+                </a>
+                <a href="https://www.linkedin.com/login" target="_blank">
+                    <img src="/debug/img/linkedin-1.svg" alt="linkedin" class="img-fluid mr-sm-1 mr-md-2">
+                </a>
+                <a href="https://in.pinterest.com/login/" target="_blank">
+                    <img src="/debug/img/pinterest.svg" alt="pinterest" class="img-fluid mr-sm-1 mr-md-2">
+                </a>
+                <a href="https://www.instagram.com/accounts/login/" target="_blank">
+                    <img src="/debug/img/instagram.svg" alt="instagram" class="img-fluid mr-sm-1 mr-md-2">
+                </a>
+                
+            </div>
+              
+                        </div>
+                       <!-- url share box -->
+                         <div class="col-md-6 mx-auto pb-32">
+                            <div class="div_share_url">
+                                <small>Event Url</small>
+                                <p>https://bit.ly/3qCVvOI</p>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--contact us modal-->
+<!--<div class="modal px-0 popup-css-z" id="contactModal">
+        <div class="modal-dialog modal-lg writeus-modaldialog my-0">
+        <div class="modal-content writeus-modalcontent pt-5 pb-4">
+
+            <div class="container-fluid writeus-container">
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <div class="row text-center">
+                            <div class="col-md-12 float-left mb-5">
+                                <h3 class="text-center font-weight-bold text-white">WRITE TO US</h3>
+                                <div class="writeus-border"></div>
+                            </div>
+                        </div>
+
+                        <div class="row text-center">
+                                <form id="sendContactUsModal" class="row">
+
+									<input hidden type="text" value="" class="form-control" id="usr" name="lead_url" required>
+
+									<input type="number" class="form-control" value="" name="enquiry" hidden>
+
+                                    <div class="col-md-12 form-horizontal mb-3">
+                                        <div class="form-group control-group form-inline">
+                                            <div class="col-lg-3 col-md-4 col-sm-5 col-12 contact-label--div">
+                                                <label for="name" class="font-weight-bold text-white justify-content-start pl-md-2">Full name <a style="color: red">*</a></label>
+                                            </div>
+                                            <div class="col-lg-7 col-md-7 col-sm-6 col-12 p-0 contact-input--div offset-lg-1">
+                                                <input type="text" class="form-control controls inp-style" id="name" required placeholder="Enter your full name" name="contact_fname">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 form-horizontal mb-3">
+                                        <div class="form-group control-group form-inline">
+                                            <div class="col-lg-3 col-md-4 col-sm-5 col-12 contact-label--div">
+                                                <label for="email" class="font-weight-bold text-white justify-content-start pl-md-2">Email Id <a style="color: red">*</a></label>
+                                            </div>
+                                            <div class="col-lg-7 col-md-7 col-sm-6 col-12 p-0 contact-input--div offset-lg-1">
+                                                <input type="email" class="form-control controls inp-style" id="email" required placeholder="Enter your email" name="contact_email">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 form-horizontal mb-3">
+                                        <div class="form-group control-group form-inline">
+                                            <div class="col-lg-3 col-md-4 col-sm-5 col-12 contact-label--div">
+                                                <label for="phone" class="font-weight-bold text-white justify-content-start pl-md-2">Phone No <a style="color: red">*</a></label>
+                                            </div>
+                                            <div class="col-lg-7 col-md-7 col-sm-6 col-12 p-0 contact-input--div offset-lg-1">
+                                                <input type="text" class="form-control controls inp-style" id="phone" required minlength="10" maxlength="16" onkeypress='validate(event)' placeholder="Enter phone number" name="contact_phone">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 form-horizontal mb-3">
+                                        <div class="form-group control-group form-inline">
+                                            <div class="col-lg-3 col-md-4 col-sm-5 col-12 contact-label--div">
+                                                <label for="comment" class="font-weight-bold text-white justify-content-start pl-md-2">Message</label>
+                                            </div>
+                                            <div class="col-lg-7 col-md-7 col-sm-6 col-12 p-0 contact-input--div offset-lg-1">
+                                                <textarea class="form-control controls inp-style" placeholder="Enter your message" rows="5" id="contact_message" name="contact_message"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+									<div class="col-md-12 form-horizontal mb-3">
+										<div class="form-group control-group form-inline">
+											<div class="col-lg-3 col-md-4 col-sm-5 col-12 contact-label--div">
+
+											</div>
+											<div class="col-lg-7 col-md-7 col-sm-6 col-12 p-0 contact-input--div offset-lg-1">
+												<div class="g-recaptcha" data-sitekey=""></div>
+											</div>
+										</div>
+									</div>
+
+                                    <div class="col-md-12">
+                                        <p class="contact_us_error text-danger"></p>
+                                        <button type="submit" class="btn btn-info writeform-btn py-2 font-weight-bold">Submit </button>
+                                        <button type="submit" class="btn btn-danger writeform-btn py-2 font-weight-bold" data-dismiss="modal">Cancel</button>
+                                    </div>
+
+                                </form>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn close-modal-outside" data-dismiss="modal" type="button">
+                <span aria-hidden="true" class="font-weight-bold">×</span>
+            </button>
+        </div>
+    </div>
+    </div>-->
+
+<!--Modal-->
+
+<!--======== FOOTER =================-->
+
+<!-- Footer -->
+<footer class="page-footer pt-4">
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left pb-4 footer-div">
+
+        <!-- Grid row -->
+        <div class="row">
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto links-footer">
+
+                <!-- Links -->
+                <h6 class="font-weight-bold text-uppercase mb-1 text-left text-sm-center text-md-left">H2O Digital Pvt. Ltd.</h6>
+
+                <ul class="list-unstyled all-footer--links line-footer-links">
+                    <li>
+                        <a  href="/contact-us">
+							<address class="address-sub">
+								#435, 3rd Floor, 27th Main Road, <br> 1st Sector HSR Layout, Bangalore - 560102
+							</address>
+                        </a>
+                    </li>
+					<li>
+						<h6 class="branch-address text-uppercase text-left text-sm-center text-md-left"><b>Branch Office (Hyderabad)</b></h6>
+						<a  href="javascript:void(0);">
+							<address class="address-sub">
+								Wajid Residency, 9-4-77 /A/55, Al Hasnath Colony,<br>
+								Toli Chowki,Hyderabad,Telangana.
+							</address>
+						</a>
+					</li>
+                    <li>
+						<h6 class="branch-address text-uppercase text-left text-sm-center text-md-left"><b>Branch Office (Jabalpur)</b></h6>
+						<a  href="javascript:void(0);">
+							<address class="address-sub">
+								 G.D COMPLEX, Old Krishna Talkies Compound, Nagar Nigam Road, <br> Teen Patti, Jabalpur, <br> Madhya Pradesh - 482002
+							</address>
+						</a>
+					</li>
+                     <li>
+						<h6 class="branch-address text-uppercase text-left text-sm-center text-md-left"><b>Branch Office (Delhi)</b></h6>
+						<a  href="javascript:void(0);">
+							<address class="address-sub">
+								   K-108, Thokar No.5, Abul Fazal Enclave Part 1, Jamia Nagar, Okhla, New Delhi, Delhi, 110025
+							</address>
+						</a>
+					</li>
+                     <li>
+						<h6 class="branch-address text-uppercase text-left text-sm-center text-md-left"><b>Branch Office (Haryana)</b></h6>
+						<a  href="javascript:void(0);">
+							<address class="address-sub">
+								   D19, Near Made Easy Primary School, Sector 57, Gurgaon, Haryana 122413
+							</address>
+						</a>
+					</li>
+                     <li>
+						<h6 class="branch-address text-uppercase text-left text-sm-center text-md-left"><b>Branch Office (Thane)</b></h6>
+						<a  href="javascript:void(0);">
+							<address class="address-sub">
+								    Jagdish Industrial Estate Acharya Atre Marg, Tulsi Dham, Vedant Complex, Vartak Nagar, Thane West, Thane Gala No : 110, Thane, Maharashtra 400606
+							</address>
+						</a>
+					</li>
+                     <li>
+						<h6 class="branch-address text-uppercase text-left text-sm-center text-md-left"><b>Branch Office (Jamshedpur)</b></h6>
+						<a  href="javascript:void(0);">
+							<address class="address-sub">
+								    Qr No : 41, T.R Type, Diagonal Road, Bistupur, Jamshedpur, <br> Jharkhand 831001
+							</address>
+						</a>
+					</li>
+                    <li>
+                        <a href="tel:8884739988" class="phone-link">
+                            <img src="/debug/img/phone-call.svg" class="img-fluid phoneIcon" alt="call">
+                            +91 8884 739 988
+                        </a>
+                    </li>
+					<li>
+						<a href="/cdn-cgi/l/email-protection#b5dcdbd3daf5c1d0d6ddd4c6dad3c19bd6dad8" class="email-link" target="_top">
+							<img src="/debug/img/email-3.svg" class="img-fluid phoneIcon" alt="email">
+							<span class="__cf_email__" data-cfemail="620b0c040d221607010a03110d04164c010d0f">[email&#160;protected]</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://goo.gl/maps/cNxT2nEfUt4hYczP6">
+							<img src="/debug/img/google@3x.png" alt="Map" class="" style="width: 30px;">
+						</a>
+						<span class="font-weight-bold" style="text-decoration: underline;">
+                            <a href="https://goo.gl/maps/cNxT2nEfUt4hYczP6" target="_blank">
+                                Get Direction
+                            </a>
+                        </span>
+					</li>
+                </ul>
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto links-footer">
+
+                <!-- Links -->
+                <h6 class="font-weight-bold text-uppercase mb-1 text-left text-sm-center text-md-left">INTERNATIONAL SERVICE</h6>
+
+                <ul class="list-unstyled all-footer--links line-footer-links">
+                    <li>
+                        <a href="/digital-marketing-service-uzbekistan-uk-dubai">Digital Marketing</a>
+                    </li>
+                    <li>
+                        <a href="/seo-agency-in-uzbekistan-uk-dubai">SEO Agency</a>
+                    </li>
+                    <li>
+                        <a href="/search-engine-marketing-company-uzbekistan-uk-dubai">Search Engine Marketing</a>
+                    </li>
+                    <li>
+                        <a href="/social-media-marketing-company-uzbekistan-uk-dubai">Social Media Marketing</a>
+                    </li>
+                </ul>
+                <ul class="list-unstyled all-footer--links line-footer-links">
+                    <li>
+                        <h6 class="branch-address text-uppercase text-left text-sm-center text-md-left"><b>International Address</b></h6>
+                        <a  href="/contact-us">
+                            <address class="address-sub">
+                                2170 Sherobee Road Mississauga,<br> ON L5A 3P8 Canada
+                            </address>
+                        </a>
+                        
+                    </li>
+                    <li>
+                        <br>
+                        <a  href="/contact-us">
+                            <address class="address-sub">
+                               Meena Bazar, Cosmos Lane - near Dubai Museum - Bur Dubai - Al Souq Al Kabeer - Dubai - United Arab Emirates.
+                            </address>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+971507557789" class="phone-link">
+                            <img src="/debug/img/phone-call.svg" class="img-fluid phoneIcon" alt="call">
+                            +971 507557789
+                        </a>
+
+                    </li>
+                    
+                </ul>
+
+                <h6 class="font-weight-bold text-uppercase mb-1 text-left text-sm-center text-md-left">Ecommerce SERVICE</h6>
+
+                <ul class="list-unstyled all-footer--links line-footer-links">
+                    <li>
+                        <a href="/books-ecommerce-store">Book E-commerce Store</a>
+                    </li>
+                    <li>
+                        <a href="/electronics-ecommerce-store">Electronic E-commerce Store</a>
+                    </li>
+                    <li>
+                        <a href="/home-appliances-ecommerce-store">Home E-commerce Store</a>
+                    </li>
+                    <li>
+                        <a href="/jewelry-ecommerce-store">Jewelery E-commerce Store</a>
+                    </li>
+                </ul>
+
+
+                <h6 class="font-weight-bold text-uppercase mb-1 text-left text-sm-center text-md-left">Testing</h6>
+
+                <ul class="list-unstyled all-footer--links line-footer-links">
+                    <li>
+                        <a href="/software-testing-company-in-bangalore">Software Testing</a>
+                    </li>
+                    <li>
+                        <a href="/testing/security-testing-company-in-bangalore">Security Testing</a>
+                    </li>
+                    <li>
+                        <a href="/testing/performance-testing-company-in-bangalore">Performance Testing</a>
+                    </li>
+                </ul>
+
+                <h6 class="font-weight-bold text-uppercase mb-1 text-left text-sm-center text-md-left">consultant</h6>
+
+                <ul class="list-unstyled all-footer--links line-footer-links">
+                    <li>
+                        <a href="/netsuite-solution-consultant">NetSuite solution consultant</a>
+                    </li>
+                    <li>
+                        <a href="/recruitment-service" target="_blank">Recruitment Service</a>
+                    </li>
+                    <li>
+                        <a href="/sharepoint-development-company-in-bangalore" target="_blank">SharePoint Development</a>
+                    </li>
+                    <li>
+                        <a href="/software-consultant-in-bangalore" target="_blank">Software Consultant</a>
+                    </li>
+                    <li>
+                        <a href="/sharepoint-support-and-maintenance-services" target="_blank">SharePoint Support & Maintenance</a>
+                    </li>
+                    <li>
+                        <a href="/netsuite-support-services" target="_blank">NetSuite Support Services</a>
+                    </li>
+                    <li>
+                        <a href="/b2b-it-services-in-dubai" target="_blank">B2B IT Solution</a>
+                    </li>
+
+                </ul>
+			</div>
+
+
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto links-footer">
+
+                <!-- Links -->
+                <h6 class="font-weight-bold text-uppercase mb-1 text-left text-sm-center text-md-left">SERVICES</h6>
+
+                <ul class="list-unstyled all-footer--links line-footer-links">
+                    <li>
+                        <a href="/digital-marketing-company-in-india">Digital Marketing</a>
+                    </li>
+                    <li>
+                        <a href="/SEO-SERVICES-Company-Bangalore">SEO Services</a>
+                    </li>
+                    <li>
+                        <a href="/HR-PAYROLL-MANAGEMENT-SOFTWARE-Company">HR and Payroll Management</a>
+
+                    </li>
+                    <li>
+                        <a href="/website-designing-company-in-Bangalore">Website Design</a>
+                    </li>
+                    <li>
+                        <a href="/mobile-app-development-company-in-Bangalore">Mobile App Development</a>
+                    </li>
+                    <li>
+                        <a href="/ui-ux-design-company-in-bangalore">UI/UX Design</a>
+                    </li>
+                    <li>
+                        <a href="/seo-company-in-india">SEO Company In India</a>
+                    </li>
+                    <li>
+                        <a href="/logo-design-companies-in-bangalore">Logo Design</a>
+                    </li>
+                    <li>
+                        <a href="/brochure-design-companies-in-bangalore">Brochure Design</a>
+                    </li>
+                </ul>
+                <h6 class="font-weight-bold text-uppercase mt-2 mb-1 text-left text-sm-center text-md-left">Product Service</h6>
+                <ul class="list-unstyled all-footer--links line-footer-links">
+                    <li>
+                        <a href="/product-services/healthcare-software-development-company-in-bangalore">Healthcare Management</a>
+                    </li>
+                    <li>
+                        <a href="/product-services/election-management-software-development-company">Election Management Software</a>
+                    </li>
+                    <li>
+                        <a href="/product-services/banking-management-software-company-in-bangalore">Banking Management Software</a>
+                    </li>
+                    <li>
+                        <a href="/product-services/trading-software-development-company">Trading Software</a>
+                    </li>
+                    <li>
+                        <a href="/product-services/online-travel-management-software-development-company">Travel Management Software</a>
+                    </li>
+                    <li>
+                        <a href="/product-services/event-management-software-development-company">Event Management Software</a>
+                    </li>
+                    <li>
+                        <a href="/product-services/boutique-software-services-company-in-bangalore">Custom Boutique Software</a>
+                    </li>
+                    <li>
+                        <a href="/product-services/wedding-management-software-development-company-in-bangalore">Wedding Management Software</a>
+                    </li>
+                    <li>
+                        <a href="/product-services/salon-booking-software-company-in-bangalore">Salon Booking Software</a>
+                    </li>
+                </ul>
+                <h6 class="font-weight-bold text-uppercase mt-2 mb-1 text-left text-sm-center text-md-left">Other Services</h6>
+                <ul class="list-unstyled all-footer--links line-footer-links">
+                    <li>
+                        <a href="/bulk-laptop-dealers-in-koramangala">Bulk Laptop Dealers</a>
+                    </li>
+					<li>
+						<a href="/guest-post-package">Guest Post Package</a>
+					</li>
+                    <li>
+						<a href="/bulk-sms-services-transactional-route">Bulk SMS Services</a>
+					</li>
+                </ul>
+
+                   <h6 class="font-weight-bold text-uppercase mt-2 mb-1 text-left text-sm-center text-md-left">HIRE DEVELOPERS</h6>
+                <ul class="list-unstyled all-footer--links line-footer-links">
+                    <li>
+                        <a href="/hire-php-developers">PHP Developers</a>
+                    </li>
+					<li>
+						<a href="/hire-android-developers">Android Developers</a>
+					</li>
+                    <li>
+						<a href="/hire-ios-developers">IOS Developers</a>
+					</li>
+                    <li>
+						<a href="/hire-react-native-developers">React Native Developers</a>
+					</li>
+                    <li>
+						<a href="/hire-angular-developers">Angular Developers</a>
+					</li>
+                    <li>
+						<a href="/hire-node-js-developers">Node.JS Developers</a>
+					</li>
+                    <li>
+						<a href="/hire-netsuite-consultant">NetSuite Developers</a>
+					</li>
+                    <li>
+						<a href="/hire-sharepoint-consultant">SharePoint Developers</a>
+					</li>
+                </ul>
+                
+            </div>
+            <!-- Grid column -->
+
+            <div class="col-md-3 mx-auto links-footer">
+
+
+                <h6 class="font-weight-bold text-uppercase mb-1 text-left text-sm-center text-md-left">Training We Offer</h6>
+                
+
+                <ul class="list-unstyled all-footer--links line-footer-links">
+                   
+                    <li>
+                        <a href="/training/software-training-company-in-bangalore">Software Training Company In Bangalore</a>
+                    </li>
+                    <li>
+                        <a href="/training/digital-marketing-training-in-bangalore">Digital Marketing Training</a>
+                    </li>
+                    <li>
+                        <a href="/training/full-stack-development-training-in-bangalore">Full Stack Development Training</a>
+                    </li>
+                    <li>
+                        <a href="/training/ims-and-sip-signaling-training-in-bangalore">IMS and SIP Training</a>
+                    </li>
+					<li>
+						<a href="/training/devops-training-in-bangalore">Devops Training</a>
+					</li>
+                    <li class="mt-2">Contact Us For Training</li>
+                    <li><a href="tel:8867746186" class="phone-link pb-2">
+                            <img src="/debug/img/phone-call.svg" class="img-fluid phoneIcon" alt="call">
+                            +91 8867 746 186
+                        </a></li>
+                </ul>
+
+                <h6 class="font-weight-bold text-uppercase mb-1 text-left text-sm-center text-md-left">Latest Technologies</h6>
+
+                <ul class="list-unstyled all-footer--links line-footer-links">
+                    <li>
+                        <a href="/machine-learning-companies-in-bangalore">Machine Learning Services</a>
+                    </li>
+                    <li>
+                        <a href="/artificial-intelligence-company-in-bangalore">Artificial Intelligence Services</a>
+                    </li>
+                    <li>
+                        <a href="/agentic-ai-development-company">Agentic AI Development Company</a>
+                    </li>
+                    <li>
+                        <a href="/uipath-rpa-solution-architect-services">UiPath RPA Solution Architect Services</a>
+                    </li>
+                </ul>
+                <h6 class="font-weight-bold text-uppercase mt-2 mb-1 text-left text-sm-center text-md-left">Quick Links</h6>
+                <ul class="list-unstyled all-footer--links line-footer-links">
+                    <li>
+                        <a href="/logo/pricing-logo-design">Logo Design Packages</a>
+                    </li>
+                    <li>
+                        <a href="/seo/seo-packages">SEO Packages</a>
+                    </li>
+                    <li>
+                        <a href="/our-portfolio">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="/become-a-partner">Become a Partner</a>
+                    </li>
+                    <li>
+                        <a href="/programing-guidelines-for-php">Programing Guidelines For PHP</a>
+                    </li>
+                     <li>
+                        <a href="/our-brand-guidelines"> Brand Guidelines</a>
+                    </li>
+                     <li>
+                        <a href="/sitemap.html" target="_blank"> HTML Sitemap</a>
+                    </li>
+                     <li>
+                        <a href="/sitemap.xml" target="_blank">XML Sitemap</a>
+                    </li>
+                </ul>
+                <h6 class="font-weight-bold text-uppercase mt-2 mb-1 text-left text-sm-center text-md-left">Jobs</h6>
+                <ul class="list-unstyled all-footer--links line-footer-links">
+                    <li>
+                        <a href="/jobs/android-developer">Android Developer Jobs</a>
+                    </li>
+                    <li>
+                        <a href="/jobs/react-native-developer">React Native Developer Jobs</a>
+                    </li>
+                    <li>
+                        <a href="/jobs/angular-developer">Angular Developer Jobs</a>
+                    </li>
+                    <li>
+                        <a href="/jobs/node-js-developer">Node.Js Developer Jobs</a>
+                    </li>
+                    <li>
+                        <a href="/jobs/overseas-education-counselor">Overseas Education Counselor Jobs</a>
+                    </li>
+                    <li>
+                        <a href="/jobs/automation-testing">Automation Testing Jobs</a>
+                    </li>
+                    <li>
+                        <a href="/jobs/work-from-home-php-jobs">Work From Home Jobs</a>
+                    </li>
+                </ul>
+            </div>
+
+            </div>
+            <!-- Grid column -->
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright container py-3">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-left">
+                © H2O Digital. 2026. All rights reserved.
+            </div>
+            <div class="col-md-6 mt-3 mt-md-0">
+                <div class="col-12 share-icons text-center text-md-right">
+                    <a href="https://www.facebook.com/h2o-digital/" target="_blank">
+                        <img src="/debug/img/facebook.svg" alt="facebook" class="img-fluid mr-sm-1 mr-md-2">
+                    </a>
+                    <a href="https://twitter.com/H2O DIGITAL_BNGLR" target="_blank">
+                        <img src="/debug/img/x_twitter.png" alt="twitter" class="img-fluid mr-sm-1 mr-md-2">
+                    </a>
+                    <a href="https://in.linkedin.com/company/h2o-digital-pvt-ltd" target="_blank">
+                        <img src="/debug/img/linkedin-1.svg" alt="linkedin" class="img-fluid mr-sm-1 mr-md-2">
+                    </a>
+                    <a href="https://in.pinterest.com/h2o-digital_pvt_ltd/" target="_blank">
+                        <img src="/debug/img/pinterest.svg" alt="pinterest" class="img-fluid mr-sm-1 mr-md-2">
+                    </a>
+                    <a href="https://www.instagram.com/h2o-digital_pvt_ltd/" target="_blank">
+                        <img src="/debug/img/instagram.svg" alt="instagram" class="img-fluid mr-sm-1 mr-md-2">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC3MLSIMJdEamt0Q0iQ21Omg" target="_blank">
+                        <img src="/debug/img/youtube.svg" alt="youtube" class="img-fluid mr-sm-1 mr-md-2">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright -->
+
+
+
+    <a href="javascript:void(0)" class="float" style="display: none !important;">
+        <i class="fas fa-paper-plane my-float"></i>
+    </a>
+
+    <div class="label-container div_hide" style="z-index: 999;display: none !important;" >
+		<button class="btn close btn-close-float" id="close_btn_online">x</button><br>
+        <div class="label-text online_text ">
+
+            We're Online!<br>
+            How may I help you today?
+        </div>
+        <i class="fa fa-play label-arrow float-arrow-seo"></i>
+    </div>
+
+
+    <div class="col-10 col-sm-6 col-md-6 col-lg-4 form-container px-3 pb-3" style="display: none !important;">
+        <div class="py-2">
+            <div class="row chat-heading pt-3 pb-2">
+                <div class="col-10">
+                    <h5 class="font-weight-bold text-uppercase">Have a query?</h5>
+                </div>
+                <div class="col-2 text-center">
+                    <i class="fas fa-window-minimize minimize-form"></i>
+                </div>
+            </div>
+        </div>
+
+        <form id="sendQueryUs" class="pt-3 chat-form text-center" >
+
+			<input hidden type="text" value="/po-and-stock-management" class="form-control" id="usr" name="lead_url" required>
+
+			<input type="number" class="form-control" value="2" name="enquiry" hidden>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" placeholder="Enter your name"  name="contact_fname" required>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Enter your email"  name="contact_email" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="phone" minlength="10" maxlength="16" onkeypress='validate(event)' placeholder="Enter phone number" name="contact_phone" required>
+            </div>
+            <div class="form-group">
+<!--                <label for="footer-comment">Comment:</label>-->
+                <textarea class="form-control" rows="5" id="contact_message" placeholder="Type your message here.." name="contact_message"></textarea>
+            </div>
+			<div class="form-group">
+				<div class="g-recaptcha" data-sitekey="6LfJdP4ZAAAAAHLu7rilqtpQdkdiZo90482PBgLN"></div>
+			</div>
+            <p class="contact_us_error text-danger"></p>
+            <button type="submit" class="btn btn-primary submit-chat"><i class="fas fa-paper-plane pr-2"></i>Send</button>
+        </form>
+    </div>
+
+    <!-- Footer Links -->
+
+    <button id="myBtn" title="Go to top" class="myBtn top_bottom_link"><i class="fas fa-chevron-up"></i></button>
+
+
+
+</footer>
+<!-- Footer -->
+<!-- Modal -->
+<!--Jobs Form-->
+<div class="modal fade" id="modal_php_career" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-w-mob" role="document" style="max-width: 65%">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #0150a9">
+                <h5 class="modal-title text-light" id="exampleModalLabel">Personal Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="text-light">&times;</span>
+                </button>
+            </div>
+			<form id="add_career_form">
+				<input hidden type="text" value="/po-and-stock-management" class="form-control" id="usr" name="lead_url" required>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>Name <a style="color: red">*</a></label>
+								<input class="form-control" type="text" name="career_name" required>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>Phone Number <a style="color: red">*</a></label>
+								<input class="form-control" type="text" minlength="10" maxlength="16" onkeypress='validate(event)' name="career_phone" required>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>Email Id <a style="color: red">*</a></label>
+								<input class="form-control" type="email" name="career_email" required>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>Total Exp <a style="color: red">*</a></label>
+								<input class="form-control" type="text" name="career_total_exp" required>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>Relevant Exp <a style="color: red">*</a></label>
+								<input class="form-control" type="text" name="career_relevant_exp" required>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>Career Gap(Reason)</label>
+								<input class="form-control" type="text" name="career_gap">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>Current CTC <a style="color: red">*</a></label>
+								<input class="form-control" type="text" name="career_current_ctc" required>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>Expected CTC(Offer if any) <a style="color: red">*</a></label>
+								<input class="form-control" type="text" name="career_exp_ctc" required>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>Notice Period(LWD if serving) <a style="color: red">*</a></label>
+								<input class="form-control" type="text" name="career_notice_period" required>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>Current Location</label>
+								<input class="form-control" type="text" name="career_current_loc">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>Preferred Location</label>
+								<input class="form-control" type="text" name="career_preferred_loc">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>Reason for job change <a style="color: red">*</a></label>
+								<input class="form-control" type="text" name="career_job_change" required>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>Why should we hire you ?</label>
+								<textarea class="form-control" name="career_message"></textarea>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="myfile">Attach your resume <a style="color: red">*</a></label>
+                                <small class="text-danger">Only PDF, DOC, and DOCX are allowed</small>
+								<input type="file" class="form-control" id="myfile" name="attach_document" required>
+							</div>
+						</div>
+
+					</div>
+					<div class="g-recaptcha" data-sitekey="6LfJdP4ZAAAAAHLu7rilqtpQdkdiZo90482PBgLN"></div>
+				</div>
+				<div class="modal-footer">
+					<span class="add_career_error" style="color: red"></span>
+					<button type="submit" class="btn btn-primary m-auto add_career_pop_up_button" style="background-color: #0150a9">
+						Submit <span class="add_career_pop_up_fa_spin_icon"></span>
+					</button>
+				</div>
+			</form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="job_apply_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-w-mob" role="document" style="max-width: 65%">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #0150a9">
+                <h5 class="modal-title text-light" id="exampleModalLabel">Apply Now</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="text-light">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>DOB</label>
+                            <input class="form-control" type="date">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Contact Number</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Email Id</label>
+                            <input class="form-control" type="email">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Job Application For</label>
+                            <input class="form-control" type="email">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Current Company</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Total Work Experience</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Current Salary</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Current Salary</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="myfile">Select a file:</label>
+                            <input type="file" id="myfile" name="myfile" accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary m-auto" style="background-color: #0150a9">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button type="button" class="btn orange-btncolor text-white send-enquiry" data-toggle="modal" data-target="#quote-request">
+    Get In Touch
+</button>
+<!-- Chat Bot -->
+ <button class="btn chatbot-button" type="button" id="chatbotBtn">
+    <img src="/debug/img/chatbot.png" alt="">
+ </button>
+ <!-- Modal Structure -->
+<div id="chatbotModal" class="chatbot-modal">
+  <div class="chatbot-modal-content">
+    <span class="chatbot-close">&times;</span>
+    <iframe src="https://chatbot.h2o-digital.com/" 
+            id="chatbotIframe"
+            class="chatbot-iframe">
+    </iframe>
+  </div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/debug/js/main.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<!--Start of Tawk.to Script-->
+<!--<script type="text/javascript">
+	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+	(function(){
+		var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+		s1.async=true;
+		s1.src='https://embed.tawk.to/5e8f627235bcbb0c9aaf8762/default';
+		s1.charset='UTF-8';
+		s1.setAttribute('crossorigin','*');
+		s0.parentNode.insertBefore(s1,s0);
+	})();
+</script>-->
+<!--End of Tawk.to Script-->
+<script>
+    AOS.init();
+</script>
+
+<script>
+	$("#close_btn_online").click(function(){
+		$(".div_hide").hide();
+	});
+</script>
+
+<script>
+
+    $(window).scroll(function() {
+        var height = $(window).scrollTop();
+        if (height > 100) {
+            $('#myBtn').fadeIn();
+        } else {
+            $('#myBtn').fadeOut();
+        }
+    });
+    $(document).ready(function() {
+        $("#myBtn").click(function() {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 2000);
+        });
+    });
+
+</script>
+
+<script>
+
+    $(".carousel").on("touchstart", function(event){
+        var xClick = event.originalEvent.touches[0].pageX;
+        $(this).one("touchmove", function(event){
+            var xMove = event.originalEvent.touches[0].pageX;
+            if( Math.floor(xClick - xMove) > 5 ){
+                $(this).carousel('next');
+            }
+            else if( Math.floor(xClick - xMove) < -5 ){
+                $(this).carousel('prev');
+            }
+        });
+        $(".carousel").on("touchend", function(){
+            $(this).off("touchmove");
+        });
+    });
+
+</script>
+
+<script>
+	var pop_up_form = '1';
+
+    $(document).ready(function(){
+		if (pop_up_form == 1 || pop_up_form == 5) {
+			setTimeout(function () {
+				$(".open_modal_onload").click();
+			}, 500);
+		}
+
+        $('.carousel').carousel({
+            interval: 5000
+        });
+    });
+</script>
+
+<!--<script type="text/javascript" id="cookieinfo"
+        src="cookieinfo.min.js"
+        data-bg="#0150a9"
+        data-fg="#FFFFFF"
+        data-link="#F1D600"
+        data-cookie="CookieInfoScript"
+        data-text-align="left"
+        data-close-text="Got it!">
+</script>-->
+
+<!--Footer chat button-->
+<script>
+    $(document).ready(function () {
+        $('.page-footer .float').mouseup(function () {
+            $('.form-container').css({"visibility": "visible", "opacity": "1"});
+            $(this).hide();
+        });
+        $('.page-footer .minimize-form').click(function () {
+            $('.page-footer .float').show();
+            $('.form-container').css({"visibility": "hidden", "opacity": "0"});
+        });
+    });
+</script>
+
+<!--send contact us -->
+<script>
+    var controller = 'Welcome';
+    var base_url = '/';
+
+	$("#add_career_form").on('submit', function (e) {
+		$('.add_career_error').html('');
+		$('.add_career_pop_up_fa_spin_icon').html('<i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i>\n');
+		$(".add_career_pop_up_button").attr("disabled", true);
+		e.preventDefault();
+        // 🔹 File size validation (5 MB example)
+    var fileInput = $('input[name="attach_document"]')[0];
+    if (fileInput && fileInput.files.length > 0) {
+        var file = fileInput.files[0];
+        var maxSize = 5 * 1024 * 1024; // 5 MB in bytes
+        if (file.size > maxSize) {
+            $('.add_career_error').html('File size must be less than 5 MB.');
+            $('.add_career_pop_up_fa_spin_icon').html('');
+            $(".add_career_pop_up_button").attr("disabled", false);
+            return false; // stop submission
+        }
+    }
+		$.ajax({
+			type: 'POST',
+			url: base_url + controller + '/submit_career_form',
+			data: new FormData(this),
+			contentType: false,
+			cache: false,
+			processData: false,
+			'dataType': "json",
+			success: function (data) {
+				if (data.status == 200) {
+					window.location.href = base_url+"thank-you";
+
+				} else {
+					$('.add_career_error').html(data.data);
+					$('.add_career_pop_up_fa_spin_icon').html('');
+					$(".add_career_pop_up_button").attr("disabled", false);
+				}
+			}
+		});
+	});
+
+	$("#home_contact").on('submit', function (e) {
+		$('.add_home_contact_error').html('');
+		$('.add_home_contact_pop_up_fa_spin_icon').html('<i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i>\n');
+		$(".add_home_contact_pop_up_button").attr("disabled", true);
+		e.preventDefault();
+		$.ajax({
+			type: 'POST',
+			url: base_url + controller + '/submit_contact_us',
+			data: new FormData(this),
+			contentType: false,
+			cache: false,
+			processData: false,
+			'dataType': "json",
+			success: function (data) {
+				if (data.status == 200) {
+					window.location.href = base_url+"thank-you";
+
+				} else {
+					$('.add_home_contact_error').html(data.data);
+					$('.add_home_contact_pop_up_fa_spin_icon').html('');
+					$(".add_home_contact_pop_up_button").attr("disabled", false);
+				}
+			}
+		});
+	});
+
+    $(document).ready(function() {
+
+        $("#sendContactUsModal").on('submit', function(e){
+            e.preventDefault();
+            $('.contact_us_error').html('');
+                $("div#divLoading").addClass('show');
+                $.ajax({
+                    'url': base_url + controller + '/submit_contact_us',
+                    'type': 'post', //the way you want to send data to your URL
+                    data: new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData:false,
+                    'dataType': "json",
+                    'success': function (data) {
+                        if (data.status == 200) {
+							window.location.href = base_url+"thank-you";
+
+
+                        } else {
+                            $("div#divLoading").removeClass('show');
+                            $('.contact_us_error').html(data.data);
+                        }
+                    }
+                });
+        });
+
+    });
+
+	/*Only Numbers in input*/
+	function validate(evt) {
+		var theEvent = evt || window.event;
+
+		// Handle paste
+		if (theEvent.type === 'paste') {
+			key = event.clipboardData.getData('text/plain');
+		} else {
+			// Handle key press
+			var key = theEvent.keyCode || theEvent.which;
+			key = String.fromCharCode(key);
+		}
+		var regex = /[0-9]|\./;
+		if( !regex.test(key) ) {
+			theEvent.returnValue = false;
+			if(theEvent.preventDefault) theEvent.preventDefault();
+		}
+	}
+
+</script>
+<!--send query to us -->
+<script>
+    var controller = 'Welcome';
+    var base_url = '/';
+
+
+    $(document).ready(function() {
+
+        $("#sendQueryUs").on('submit', function(e){
+            e.preventDefault();
+            $('.contact_us_error').html('');
+			$("div#divLoading").addClass('show');
+			$.ajax({
+				'url': base_url + controller + '/submit_contact_us',
+				'type': 'post', //the way you want to send data to your URL
+				data: new FormData(this),
+				contentType: false,
+				cache: false,
+				processData:false,
+				'dataType': "json",
+				'success': function (data) {
+					if (data.status == 200) {
+						window.location.href = base_url+"thank-you";
+					} else {
+						$("div#divLoading").removeClass('show');
+						$('.contact_us_error').html(data.data);
+					}
+				}
+			});
+        });
+
+
+    });
+
+</script>
+
+
+<script>
+
+    var controller = 'Welcome';
+    var base_url = '/';
+
+    $(document).ready(function() {
+
+        $("#enquiry_pop_up_add").on('submit', function (e) {
+            $('.add_error').html('');
+            $('.add_enquiry_pop_up_fa_spin_icon').html('<i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i>\n');
+            $(".add_enquiry_pop_up_button").attr("disabled", true);
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: base_url + controller + '/submitEnquiryPopUpForm',
+                data: new FormData(this),
+                contentType: false,
+                cache: false,
+                processData: false,
+                'dataType': "json",
+                success: function (data) {
+                    if (data.status == 200) {
+						window.location.href = base_url+"thank-you";
+
+                    } else {
+                        $('.add_error').html(data.data);
+                        $('.add_enquiry_pop_up_fa_spin_icon').html('');
+                        $(".add_enquiry_pop_up_button").attr("disabled", false);
+                    }
+                }
+            });
+        });
+    });
+
+</script>
+<script src="/debug/js/jssocials.js"></script>
+<script>
+    $("#shareRoundIcons").jsSocials({
+        showLabel: false,
+        showCount: false,
+        shares: ["twitter", "facebook","linkedin"]
+    });
+</script>
+<script>
+	/*Testimonial Modal for videos*/
+	$('#youtube-modal').on('hidden.bs.modal', function () {
+		$("#youtube-modal iframe").attr("src", $("#youtube-modal iframe").attr("src"));
+	});
+	<!--stop video when modal closes-->
+	$('#youtube-modal').on('hide.bs.modal', function(e) {
+		var $if = $(e.delegateTarget).find('iframe');
+		var src = $if.attr("src");
+		$if.attr("src", '/empty.html');
+		$if.attr("src", src);
+	});
+</script>
+<script>
+ 
+// fixed form on scrolling
+	$(window).on("scroll", function() {
+		var hT = $('.hide-form').offset().top,
+			hH = $('.hide-form').outerHeight(),
+			sM = $('.seo-page').offset().top,
+			sH = $('.seo-page').outerHeight(),
+			wH = $(window).height(),
+			wS = $(this).scrollTop();
+
+		if (wS > (hT+hH-wH)){
+			$('.web_analysis').removeClass('fixed-form');
+		} else if(wS < sM) {
+			$('.web_analysis').removeClass('fixed-form');
+		} else {
+			$('.web_analysis').addClass('fixed-form');
+		}
+	});
+
+
+$(document).ready(function(){
+    $('.owl-prev').attr('role', 'button');
+$('.owl-next').attr('role', 'button');
+})
+</script>
+<script>
+    // Get modal elements
+const chatbotBtn = document.getElementById('chatbotBtn');
+const chatbotModal = document.getElementById('chatbotModal');
+const closeBtn = document.querySelector('.chatbot-close');
+const chatbotIframe = document.getElementById('chatbotIframe');
+
+// Open modal
+chatbotBtn.addEventListener('click', function() {
+  chatbotModal.style.display = 'block';
+  // Reload iframe to ensure fresh state
+  chatbotIframe.src = chatbotIframe.src;
+});
+
+// Close modal
+closeBtn.addEventListener('click', function() {
+  chatbotModal.style.display = 'none';
+});
+
+// Close when clicking outside modal
+window.addEventListener('click', function(event) {
+  if (event.target === chatbotModal) {
+    chatbotModal.style.display = 'none';
+  }
+});
+</script>
+<link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css">
+
+<script type="module">
+  import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.js';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#certificateGallery',
+    children: 'a',
+    pswpModule: () => import('https://unpkg.com/photoswipe@5/dist/photoswipe.esm.js')
+  });
+
+  lightbox.init();
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"cba5777af36f4ca4a92f5ea52acb9b7c","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+
+
+

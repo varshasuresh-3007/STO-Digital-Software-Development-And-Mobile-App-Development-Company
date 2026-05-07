@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+    <path fill="#4384f2" d="M256 0C164.139 0 89.404 74.735 89.404 166.596c0 35.759 11.152 69.826 32.257 98.547L256 464.571l134.339-199.428c21.104-28.721 32.257-62.789 32.257-98.547C422.596 74.735 347.861 0 256 0z" data-old_color="#2488FF" data-original="#2488FF"/>
+    <path fill="#0c47cf" d="M256 464.571l134.339-199.428c21.104-28.721 32.257-62.789 32.257-98.547C422.596 74.735 347.861 0 256 0v464.571z" data-old_color="#005ECE" data-original="#005ECE"/>
+    <path fill="#062c5a" d="M135.293 481.823h241.415V512H135.293z" class="active-path" data-old_color="#FFDA44" data-original="#FFDA44"/>
+    <path fill="#041b48" d="M256 481.823h120.707V512H256z" data-old_color="#FFCD00" data-original="#FFCD00"/>
+    <path fill="#fff" d="M256 81.419c-45.857 0-83.164 37.307-83.164 83.163s37.308 83.164 83.164 83.164 83.164-37.308 83.164-83.164S301.857 81.419 256 81.419z" data-original="#FFFFFF"/>
+    <path fill="#d8d7da" d="M256 247.747c45.857 0 83.164-37.308 83.164-83.164S301.857 81.419 256 81.419v166.328z" data-original="#D8D7DA"/>
+</svg>

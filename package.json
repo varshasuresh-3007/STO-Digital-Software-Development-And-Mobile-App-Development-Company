@@ -1,0 +1,22 @@
+{
+  "name": "h2o-digital",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve public",
+    "start": "npx serve public",
+    "build": "echo 'Static clone is ready in public/'",
+    "preview": "npx serve public"
+  },
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-router-dom": "^7.15.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "serve": "^14.2.1",
+    "vite": "^8.0.10"
+  }
+}
