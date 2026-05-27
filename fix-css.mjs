@@ -24,9 +24,9 @@ for (const file of files) {
   let content = fs.readFileSync(file, 'utf8');
   let originalContent = content;
   
-  content = content.replace(/Techasoft/g, 'H2O Digital');
-  content = content.replace(/techasoft/g, 'h2o-digital');
-  content = content.replace(/TECHASOFT/g, 'H2O DIGITAL');
+  content = content.replace(/Techasoft/g, 'STO Digital');
+  content = content.replace(/techasoft/g, 'sto-digital');
+  content = content.replace(/TECHASOFT/g, 'STO DIGITAL');
   
   if (content !== originalContent) {
     fs.writeFileSync(file, content, 'utf8');

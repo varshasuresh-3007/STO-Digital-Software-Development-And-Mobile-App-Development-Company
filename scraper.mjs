@@ -96,9 +96,9 @@ async function scrape() {
         html = html.replace(/https:\/\/(www\.)?techasoft\.com/g, '');
         
         // Replace text
-        html = html.replace(/Techasoft/g, 'H2O Digital');
-        html = html.replace(/techasoft/g, 'h2o-digital');
-        html = html.replace(/TECHASOFT/g, 'H2O DIGITAL');
+        html = html.replace(/Techasoft/g, 'STO Digital');
+        html = html.replace(/techasoft/g, 'sto-digital');
+        html = html.replace(/TECHASOFT/g, 'STO DIGITAL');
         
         buffer = Buffer.from(html, 'utf8');
         

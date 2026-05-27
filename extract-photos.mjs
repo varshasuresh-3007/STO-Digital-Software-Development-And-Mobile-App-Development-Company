@@ -72,7 +72,7 @@ async function extractPhotos() {
     }
     
     // As requested: "put https://www.techasoft.com/ logo okay"
-    // The logo class is "h2o-digital-logo", we should replace its src with the absolute techasoft URL
+    // The logo class is "sto-digital-logo", we should replace its src with the absolute techasoft URL
     // Actually, it's easier to just ensure the absolute URL is used for the logo or rename the class back.
     // The logo is TS-Logo-LArge-1.png
     html = html.replace(/src=["']\/debug\/img\/TS-Logo-LArge-1\.png["']/g, `src="${BASE_URL}/debug/img/TS-Logo-LArge-1.png"`);

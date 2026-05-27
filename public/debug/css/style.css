@@ -424,7 +424,7 @@ body::-webkit-scrollbar-thumb {
     text-align: center;
 }
 
-.copyright-h2o-digital {
+.copyright-sto-digital {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 16px;
     font-weight: 600;
@@ -3119,7 +3119,7 @@ form.web_analysis {
     line-height: 30px;
 }
 
-a.h2o-digital-link-color {
+a.sto-digital-link-color {
     text-decoration: none;
 }
 
@@ -3191,8 +3191,8 @@ h1.logo_companies_heading {
 
 /*New Header*/
 
-.second-navbar .h2o-digital-logo {
-    margin-left: 5rem !important;
+.second-navbar .sto-digital-logo {
+    margin-left: 1.5rem !important;
 }
 
 .top-header {
@@ -3334,9 +3334,11 @@ h1.logo_companies_heading {
 .home-new .our-service .first-card .card {}
 
 .home-new .our-service .card {
-    height: 280px;
+    min-height: 280px;
+    height: auto;
     background: #ffffff;
     padding-top: 25px;
+    padding-bottom: 25px;
     padding-left: 15px;
     padding-right: 15px;
     width: 65%;
@@ -5104,7 +5106,7 @@ button.btn-info.btn_read_more{
     font-size: 235%;
     color: #000113;
 }
-.h2o-digital__link--style {
+.sto-digital__link--style {
     color: #1e6cdf;
     font-weight: bold;
     text-decoration: none;
@@ -7149,9 +7151,17 @@ input.audit__input{
 .mailIcon{
     width: 20px;
 }
-.navbar-brand .h2o-digital-logo{
-    width: 60px;
-    height: 64px;
+.navbar-brand {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.navbar-brand .sto-digital-logo{
+    width: auto;
+    height: 26px;
+    object-fit: contain;
+    display: block;
 }
 .serviceIcon{
     width: 30.5px;
@@ -7225,7 +7235,9 @@ input.audit__input{
     /* height: 9.5px; */
 }
 .home-dubai .home-new .our-service .card {
-    height: 286px;
+    min-height: 286px;
+    height: auto;
+    padding-bottom: 25px;
 }
 .sectionPara{
     font-family: 'Montserrat', sans-serif;
@@ -7248,19 +7260,19 @@ input.audit__input{
     text-align: center;
     color: #062953;
 }
-.work-with-h2o-digital h5{
+.work-with-sto-digital h5{
     font-size: 35px;
     font-weight: 900;
     color: #fff;
 }
-section.industries.work-with-h2o-digital {
+section.industries.work-with-sto-digital {
     padding-top: 5rem;
     padding-bottom: 5rem;
 }
-.work-with-h2o-digital p{
+.work-with-sto-digital p{
     font-size: 23px;
 }
-.work-with-h2o-digital .contactBtn .btn-common_white{
+.work-with-sto-digital .contactBtn .btn-common_white{
     padding-top: 10px;
     padding-bottom: 10px;
 
@@ -7487,7 +7499,7 @@ p.callus i {
    .navbar .nav-item{
     margin: 0;
    }
-   .second-navbar .h2o-digital-logo {
+   .second-navbar .sto-digital-logo {
     margin-left: .5rem !important;
    }
    .navbar .nav-item{
@@ -7514,8 +7526,8 @@ p.callus i {
  .navbar .nav-item{
     margin: 0;
  }
- .second-navbar .h2o-digital-logo {
-    margin-left: 5rem !important;
+ .second-navbar .sto-digital-logo {
+    margin-left: 1.5rem !important;
 }
 .navbar .nav-item{
     padding: .5rem .5rem;
@@ -7600,7 +7612,9 @@ p.callus i {
     /*}*/
     
     .home-dubai .home-new .our-service .card{
-        height: 290px;
+        min-height: 290px;
+        height: auto;
+        padding-bottom: 25px;
     }
     .home-dubai .carousel-item-height {
         height: auto;
@@ -7722,7 +7736,7 @@ p.callus i {
     .testimony-user-name {
         padding-left: 6%;
     }
-    .second-navbar .h2o-digital-logo {
+    .second-navbar .sto-digital-logo {
         margin-left: 1rem !important;
     }
     .faqs-bg {
@@ -7817,11 +7831,10 @@ p.callus i {
     .custom-container{
         width: 98% !important;
     }
-    .home-dubai .home-new .our-service .card{
-        height: 290px;
-    }
     .home-dubai .home-new .our-service .card {
-        height: 345px;
+        min-height: 345px;
+        height: auto;
+        padding-bottom: 25px;
     }
     .home-dubai .home-new .cta .cta-img .content-center h1 {
         font-size: 23px;
@@ -8099,11 +8112,9 @@ p.callus i {
         margin-right: auto;
     }
     .home-new .our-service .card {
-        height: 250px;
-        width: 45%;
-    }
-    .home-new .our-service .card {
-        height: 300px;
+        min-height: 300px;
+        height: auto;
+        padding-bottom: 25px;
         width: 65%;
     }
     .home-new .client .client-logos div:nth-child(7) img {
@@ -9257,7 +9268,7 @@ p.callus i {
 .home-dubai .share-icons.text-right {
     margin-bottom: 1rem;
 }
-.work-with-h2o-digital h5 {
+.work-with-sto-digital h5 {
     font-size: 25px;
 }
 .callus {
@@ -9927,7 +9938,9 @@ p.callus i {
     }
     /*New home page*/
     .home-new .our-service .card {
-        height: 300px;
+        min-height: 300px;
+        height: auto;
+        padding-bottom: 25px;
         width: 55%;
     }
     .home-new .cta .cta-img .content-center {
@@ -10112,7 +10125,9 @@ p.callus i {
 }
 @media only screen and (max-device-width: 400px){
     .home-new .our-service .card {
-    height: 330px;
+    min-height: 330px;
+    height: auto;
+    padding-bottom: 25px;
 }
 .list-unstyled.all-footer--links a.phone-link {
     display: block;
@@ -10367,7 +10382,9 @@ p.callus i {
     /*Menu*/
     /*New home*/
     .home-new .our-service .card {
-        height: 315px;
+        min-height: 315px;
+        height: auto;
+        padding-bottom: 25px;
         width: 70%;
     }
     /*New home*/

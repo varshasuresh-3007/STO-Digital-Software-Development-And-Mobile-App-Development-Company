@@ -54,10 +54,10 @@ async function extractCss() {
       await downloadFile(url, dest);
       console.log(`Saved to ${dest}`);
       
-      // Update content: replace Techasoft with H2O Digital in CSS
+      // Update content: replace Techasoft with STO Digital in CSS
       let content = fs.readFileSync(dest, 'utf8');
-      content = content.replace(/Techasoft/g, 'H2O Digital');
-      content = content.replace(/techasoft/g, 'h2o-digital');
+      content = content.replace(/Techasoft/g, 'STO Digital');
+      content = content.replace(/techasoft/g, 'sto-digital');
       fs.writeFileSync(dest, content, 'utf8');
 
     } catch (e) {

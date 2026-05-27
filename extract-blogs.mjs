@@ -93,9 +93,9 @@ async function processContent(content) {
   // Make all links relative
   content = content.replace(/https:\/\/(www\.)?techasoft\.com/g, '');
 
-  // BRANDING: Replace Techasoft with H2O Digital
-  content = content.replace(/Techasoft Pvt Ltd/gi, 'H2O Digital');
-  content = content.replace(/Techasoft/gi, 'H2O Digital');
+  // BRANDING: Replace Techasoft with STO Digital
+  content = content.replace(/Techasoft Pvt Ltd/gi, 'STO Digital');
+  content = content.replace(/Techasoft/gi, 'STO Digital');
 
   // CUSTOM: Remove Nishant Kumar testimonial block
   // We look for the <div class="item"> that contains Nishant Kumar
