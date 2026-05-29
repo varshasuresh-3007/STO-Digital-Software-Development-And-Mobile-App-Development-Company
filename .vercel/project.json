@@ -1,1 +1,16 @@
-{"projectId":"prj_u94tyoAZ9SJXb0zLAhQkuklGUbkn","orgId":"team_r8AF3FfrPMDrC1ZFZkF9ZKRF","projectName":"h2o-digital"}
+{
+  "projectId": "prj_u94tyoAZ9SJXb0zLAhQkuklGUbkn",
+  "orgId": "team_r8AF3FfrPMDrC1ZFZkF9ZKRF",
+  "projectName": "sto-digital",
+  "settings": {
+    "createdAt": 1778129138301,
+    "framework": "vite",
+    "devCommand": null,
+    "installCommand": null,
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist",
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "24.x"
+  }
+}
