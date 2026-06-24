@@ -2823,7 +2823,7 @@ input#email-footer {
 
 .best-seo {
     margin-bottom: 7%;
-    background-image: url("../img/seo.png");
+    background-image: url("../img/SEO.png");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -6809,6 +6809,10 @@ a.jssocials-share-link i {
 
 .consult__card__link {
     color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
 }
 
 .consult__card__link:hover {
@@ -6830,7 +6834,8 @@ a.jssocials-share-link i {
     -o-transition: transform 0.3s ease;
     transition: transform 0.3s ease;
     transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-    height: 273px;
+    min-height: 273px;
+    height: 100%;
 }
 
 .consult__card:hover {
@@ -6916,6 +6921,9 @@ div.h__line.h__line-left {
 .consult__card__body h4 {
     font-size: 20px;
     font-weight: 600;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 .consult__card__body p {
@@ -7000,7 +7008,7 @@ div.h__line.h__line-left {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     padding: 20px;
     position: relative;
-    height: 356px;
+    height: 490px;
 }
 
 .hiring__card__icon {
@@ -7064,7 +7072,7 @@ div.h__line.h__line-left {
     width: 100%;
     height: auto;
     padding: 35px 35px 50px 35px;
-    height: 400px;
+    height: 480px;
 }
 
 .casestudy__item--red {
@@ -7742,6 +7750,17 @@ input.audit__input {
 
 .linkcard {
     text-decoration: none !important;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.linkcard .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .industriesIcon {

@@ -279,7 +279,7 @@ STO Digital partners with Britannia Industries Limited to enhance biscuit produc
 
             <div className="col-md-6 pr-0 pl-4 client-img--odd">
                 <div className="text-center img-div">
-                    <img src="/uploads/logo.avif" alt="Greenspace Industrial" width="80%" height="80%" />
+                    <img src="/uploads/Logo.avif" alt="Greenspace Industrial" width="80%" height="80%" />
                 </div>
             </div>
         </div><div className="row contents-ui p-4 shadow-common" style={{"backgroundColor":"white"}}>

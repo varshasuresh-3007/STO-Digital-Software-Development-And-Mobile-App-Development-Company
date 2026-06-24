@@ -14,6 +14,11 @@ export default function BrochureDesignCompaniesInVantaa() {
       metaDesc.setAttribute('content', "STO Digital is the leading brochure designing company in Vantaa, India. We design a unique brochure depending upon your business needs.");
       document.head.appendChild(metaDesc);
     }
+
+    if (window.AOS) {
+      window.AOS.init();
+      window.AOS.refresh();
+    }
   }, []);
 
   return (

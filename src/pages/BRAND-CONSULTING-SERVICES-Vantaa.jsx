@@ -18,6 +18,11 @@ export default function BrandConsultingServicesVantaa() {
 
   return (
     <>
+      <style>{`
+        .backgrund-image-txt-left {
+          background-image: url("/debug/img/brand_consulting.jpg");
+        }
+      `}</style>
       
 
 <img src="/debug/img/Vector_Smart_Object30.svg" alt="vector-smart-object" className="back-img img-fluid" />

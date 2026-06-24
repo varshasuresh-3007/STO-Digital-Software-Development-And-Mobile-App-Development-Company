@@ -14,6 +14,11 @@ export default function AgenticAiDevelopmentCompany() {
       metaDesc.setAttribute('content', "STO Digital is a leading agentic AI development company offering custom autonomous AI solutions, smart automation and intelligent systems to transform business operations.");
       document.head.appendChild(metaDesc);
     }
+
+    if (window.AOS) {
+      window.AOS.init();
+      window.AOS.refresh();
+    }
   }, []);
 
   return (

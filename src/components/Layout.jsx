@@ -121,10 +121,9 @@ export default function Layout() {
     window.addEventListener('scroll', handleScroll);
 
     const timer = setTimeout(() => {
-      if (window.jQuery) {
-        if (window.AOS) {
-          window.AOS.refresh();
-        }
+      if (window.AOS) {
+        window.AOS.init();
+        window.AOS.refresh();
       }
     }, 200);
 

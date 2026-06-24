@@ -27,10 +27,42 @@ export default function Home() {
       metaDesc.setAttribute('content', descriptionText);
       document.head.appendChild(metaDesc);
     }
+
+    if (window.AOS) {
+      window.AOS.init();
+      window.AOS.refresh();
+    }
   }, []);
 
   return (
     <>
+      <style>{`
+        .home-new .testimonials-new .card {
+          background-image: url('/debug/img/TESTIMONIAL.svg');
+        }
+
+        .home-new .cta {
+          background-image: url('/debug/img/side-design_home@3x.png');
+          background-position: top left;
+          background-repeat: no-repeat;
+          background-size: 13%;
+          position: relative;
+        }
+
+        .home-new .our-service {
+          background-image: url('/debug/img/side-design_reverse.png'), url('/debug/img/side-design_home@3x.png');
+          background-position: left 0, right bottom;
+          background-repeat: no-repeat;
+          background-size: 13%;
+        }
+
+        .home-new .client {
+          background-image: url('/debug/img/side-design_reverse.png') !important;
+          background-position: left center !important;
+          background-repeat: no-repeat !important;
+          background-size: 13% !important;
+        }
+      `}</style>
       <main className="home-new">
         <HeroSection />
         <BridgeSection />

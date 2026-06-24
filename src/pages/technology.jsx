@@ -217,6 +217,8 @@ export default function Technology() {
                             fontSize: '14px',
                             transition: 'all 0.2s ease',
                             borderRadius: '8px',
+                            width: '100%',
+                            minWidth: 0
                           }}
                           onMouseEnter={e => {
                             e.currentTarget.style.background = cat.bg;
@@ -243,7 +245,9 @@ export default function Technology() {
                           >
                             <polyline points="9 18 15 12 9 6"></polyline>
                           </svg>
-                          {item.name}
+                          <span style={{ minWidth: 0, wordBreak: 'break-all', overflowWrap: 'break-word' }}>
+                            {item.name}
+                          </span>
                         </a>
                       </li>
                     ))}

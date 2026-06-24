@@ -241,7 +241,7 @@ export default function Services() {
                         <a
                           href={item.href}
                           className="d-flex align-items-center text-decoration-none py-1 px-2 rounded"
-                          style={{ color: '#374151', fontSize: '14px', transition: 'all 0.2s ease', borderRadius: '8px' }}
+                          style={{ color: '#374151', fontSize: '14px', transition: 'all 0.2s ease', borderRadius: '8px', width: '100%', minWidth: 0 }}
                           onMouseEnter={e => {
                             e.currentTarget.style.background = cat.bg;
                             e.currentTarget.style.color = cat.color;
@@ -260,7 +260,9 @@ export default function Services() {
                           >
                             <polyline points="9 18 15 12 9 6"></polyline>
                           </svg>
-                          {item.name}
+                          <span style={{ minWidth: 0, wordBreak: 'break-all', overflowWrap: 'break-word' }}>
+                            {item.name}
+                          </span>
                         </a>
                       </li>
                     ))}

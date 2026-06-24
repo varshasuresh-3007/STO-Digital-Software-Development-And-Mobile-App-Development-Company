@@ -18,6 +18,11 @@ export default function SoftwareDevelopmentLifeCycle() {
 
   return (
     <>
+      <style>{`
+        .backgrund-image-txt-left {
+          background-image: url("/debug/img/sdlc_img.jpg");
+        }
+      `}</style>
       
 
 <section className="seo-parallax">

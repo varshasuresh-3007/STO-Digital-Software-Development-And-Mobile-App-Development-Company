@@ -18,6 +18,11 @@ export default function NativeAppDevelopmentCompany() {
 
   return (
     <>
+      <style>{`
+        .bg-image-app {
+          background-image: url("/debug/img/native_app_img.jpg");
+        }
+      `}</style>
       
 <img src="/debug/img/Vector_Smart_Object30.svg" alt="vector-smart-object" className="back-img img-fluid" />
 <section className="seo-parallax">

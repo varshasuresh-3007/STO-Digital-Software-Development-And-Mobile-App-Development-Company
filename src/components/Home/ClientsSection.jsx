@@ -1,7 +1,7 @@
 import React from 'react';
 
 const clientLogos = [
-  { alt: "Greenspace Industrial", src: "/uploads/logo.avif" },
+  { alt: "Greenspace Industrial", src: "/uploads/Logo.avif" },
   { alt: "Surf Local ", src: "/uploads/surflocalnewdesignlogo.svg" },
   { alt: "Britannia industries limited", src: "/uploads/britannia-industries6604.jpg" },
   { alt: "kurupz ", src: "/uploads/logo_(5).svg" },

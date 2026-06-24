@@ -14,10 +14,61 @@ export default function LogoDesignCompaniesInVantaa() {
       metaDesc.setAttribute('content', "STO Digital is a custom logo design company based in Vantaa, India. Get professional custom logo design service from the best logo designers.");
       document.head.appendChild(metaDesc);
     }
+
+    if (window.AOS) {
+      window.AOS.init();
+      window.AOS.refresh();
+    }
   }, []);
 
   return (
     <>
+      <style>{`
+        .bg-img-logo-price {
+          background-image: url("/debug/img/banner_price.png");
+          height:400px;
+          background-repeat: no-repeat;
+          width: 100%;
+          background-size: 100% 100%;
+        }
+        .img-pentagon.one {
+          background-image: url("/debug/img/POLY_1.png");
+        }
+        .img-pentagon.two {
+          background-image: url("/debug/img/POLY_2.png");
+        }
+        .img-pentagon.three {
+          background-image: url("/debug/img/POLY_3.png");
+        }
+        .img-pentagon.four {
+          background-image: url("/debug/img/POLY_4.png");
+        }
+        .img-pentagon.five {
+          background-image: url("/debug/img/POLY_5.png");
+        }
+        .img-pentagon.six {
+          background-image: url("/debug/img/POLY_1.png");
+        }
+        .card-logo-price {
+          height: 550px;
+          margin-top: 26%;
+        }
+        .circle {
+          width: 110px;
+          height: 110px;
+          text-align: center;
+          background: white;
+          border-radius: 50%;
+          position: absolute;
+          top: -12%;
+          left: 0;
+          right: 0;
+          margin: auto;
+          z-index: 1;
+          box-shadow: 4px 7px 15px 7px #6666660d;
+          padding:20px;
+        }
+      `}</style>
       
 	<img src="/debug/img/Vector_Smart_Object30.svg" alt="vector-smart-object" className="back-img img-fluid" />
 	<section className="seo-parallax">
@@ -630,7 +681,7 @@ export default function LogoDesignCompaniesInVantaa() {
                                     <a className="d-flex" href="/portfolio/HIRANYA">
                                         </a><div className="card portfolio-card border-0" data-aos="zoom-in" data-aos-delay="160"><a className="d-flex" href="/portfolio/HIRANYA">
                                             <picture>
-                                                <img srcSet="/uploads/card4.jpg" className="card-img-top img-fluid" alt="HIRANYA" />
+                                                <img srcSet="/uploads/Card4.jpg" className="card-img-top img-fluid" alt="HIRANYA" />
                                             </picture>
                                             </a><div className="card-body"><a className="d-flex" href="/portfolio/HIRANYA">
                                                 <h4 className="card-title pb-2">

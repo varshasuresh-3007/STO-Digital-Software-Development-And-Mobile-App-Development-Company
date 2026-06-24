@@ -14,6 +14,11 @@ export default function RecruitmentService() {
       metaDesc.setAttribute('content', "Apply for best IT Jobs, Check out latest ✓ It Recruitments job vacancies @sto-digital.com with eligibility etc. Explore IT recruitment openings in your desired locations now");
       document.head.appendChild(metaDesc);
     }
+
+    if (window.AOS) {
+      window.AOS.init();
+      window.AOS.refresh();
+    }
   }, []);
 
   return (

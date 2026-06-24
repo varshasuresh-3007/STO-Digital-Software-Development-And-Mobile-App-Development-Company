@@ -18,6 +18,11 @@ export default function HybridAppDevelopmentCompany() {
 
   return (
     <>
+      <style>{`
+        .bg-image-app {
+          background-image: url("/debug/img/hybrid_app_img.jpg");
+        }
+      `}</style>
       
 <img src="/debug/img/Vector_Smart_Object30.svg" alt="vector-smart-object" className="back-img img-fluid" />
 

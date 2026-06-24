@@ -18,6 +18,25 @@ export default function MachineLearningCompaniesInVantaa() {
 
   return (
     <>
+      <style>{`
+        .top-spot_section {
+          background-image: linear-gradient(to bottom right, rgba(0, 42, 96, 0.8), rgba(0, 42, 96, 0.8)), url('/debug/img/reserve-top.jpg');
+          background-size: cover;
+          background-position: center;
+        }
+        .seo-percentage, .seo-percentage_img {
+          background-image: url('/debug/img/pattern-bg@3x.jpg');
+        }
+        .news-letter {
+          background-image: url('/debug/img/newsl.jpg');
+        }
+        .card-development:hover {
+          background-color: rgb(2, 80, 169) !important;
+        }
+        .card-development:hover .card-development-txt {
+          color: white !important;
+        }
+      `}</style>
       
 
 	<div className="container-fluid">
@@ -198,7 +217,7 @@ export default function MachineLearningCompaniesInVantaa() {
 					</div>
 					<div className="col-md-6 col-lg-4">
 						<div className="card py-3">
-							<img className="ml-3" src="/debug/img/2d&amp;3d.svg" width="40" height="40" alt="Local SEO" />
+							<img className="ml-3" src="/debug/img/2d&3d.svg" width="40" height="40" alt="Local SEO" />
 							<div className="card-body py-0">
 								<h4 className="card-title mb-0">
 									2D AND 3D POSE

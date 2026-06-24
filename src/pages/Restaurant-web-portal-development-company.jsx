@@ -18,6 +18,11 @@ export default function RestaurantWebPortalDevelopmentCompany() {
 
   return (
     <>
+      <style>{`
+        .backgrund-image-txt-left {
+          background-image: url("/debug/img/restaurant_web.jpg");
+        }
+      `}</style>
       
 
     <img src="/debug/img/Vector_Smart_Object30.svg" alt="vector-smart-object" className="back-img img-fluid" />

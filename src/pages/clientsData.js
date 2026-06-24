@@ -69,7 +69,7 @@ export const CLIENTS_DATA = [
     "playHidden": true,
     "appStore": "",
     "appHidden": true,
-    "logo": "/uploads/logo.avif"
+    "logo": "/uploads/Logo.avif"
   },
   {
     "name": "Happy Notes",

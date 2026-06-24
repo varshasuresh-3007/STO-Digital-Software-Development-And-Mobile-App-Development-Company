@@ -18,6 +18,11 @@ export default function EducationalWebPortalDevelopmentCompany() {
 
   return (
     <>
+      <style>{`
+        .bg-image-app {
+          background-image: url("/debug/img/edu_web_port_dev_img.jpg");
+        }
+      `}</style>
       
     <img src="/debug/img/Vector_Smart_Object30.svg" alt="vector-smart-object" className="back-img img-fluid" />
     <section className="seo-parallax">
