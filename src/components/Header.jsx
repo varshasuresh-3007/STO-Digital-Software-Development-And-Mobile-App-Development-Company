@@ -262,7 +262,11 @@ export default function Header() {
                 href="/book-consultation"
                 style={{ color: '#166ce7' }}
               >
-                Get A Free Quote
+                {currentLanguage === 'fi'
+                  ? 'Pyydä ilmainen tarjous'
+                  : currentLanguage === 'sv'
+                  ? 'Få en gratis offert'
+                  : 'Get A Free Quote'}
               </a>
             </li>
           </ul>
@@ -329,13 +333,25 @@ export default function Header() {
 
             <li className="headerBtn">
               <a href="/become-a-partner">
-                <span>Become a Partner</span>
+                <span>
+                  {currentLanguage === 'fi'
+                    ? 'Ryhdy kumppaniksi'
+                    : currentLanguage === 'sv'
+                    ? 'Bli partner'
+                    : 'Become a Partner'}
+                </span>
               </a>
             </li>
 
             <li className="headerBtnBlue ml-2">
               <a href="/book-consultation">
-                <span>Book Free Consultation</span>
+                <span>
+                  {currentLanguage === 'fi'
+                    ? 'Varaa ilmainen konsultaatio'
+                    : currentLanguage === 'sv'
+                    ? 'Boka gratis konsultation'
+                    : 'Book Free Consultation'}
+                </span>
               </a>
             </li>
           </ul>
