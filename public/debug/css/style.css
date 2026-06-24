@@ -6,6 +6,12 @@
 }
 
 /* --- */
+/* Enable word wrapping for long words globally, useful for translations */
+h1, h2, h3, h4, h5, h6, p, li, span, a, dt, dd {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
 }
@@ -821,6 +827,7 @@ main {
     font-weight: 600;
     color: rgba(6, 41, 83, 0.8) !important;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .second-navbar .dropdown:hover>.dropdown-menu {
@@ -3124,8 +3131,8 @@ form.web_analysis {
 
 .service-footer,
 .tech-footer {
-    top: 70px;
     position: relative;
+    margin-top: 40px;
 }
 
 
@@ -3174,7 +3181,7 @@ h1.brochure_companies_heading {
 }
 
 h1.mobile_app_heading {
-    left: 24%;
+    left: 29%;
     width: 50%;
     color: white;
     top: 35%;
@@ -3238,7 +3245,7 @@ h1.logo_companies_heading {
 }
 
 .home-new .cta .cta-img {
-    height: 70vh;
+    height: clamp(450px, 70vh, 750px);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -3368,6 +3375,11 @@ h1.logo_companies_heading {
     color: #062953;
 }
 
+.home-new .our-service .linkcard {
+    display: block;
+    width: 100%;
+}
+
 .home-new .our-service .first-card .card {}
 
 .home-new .our-service .card {
@@ -3458,6 +3470,8 @@ h1.logo_companies_heading {
     letter-spacing: normal;
     text-align: center;
     color: #050025;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .home-new .our-service .card p {
@@ -4173,7 +4187,7 @@ h1.logo_companies_heading {
 
 .home-new .image-scroller {
     position: relative;
-    height: 70vh;
+    height: clamp(450px, 70vh, 750px);
 }
 
 .home-new .bg-video {
@@ -7712,11 +7726,12 @@ input.audit__input {
     align-items: center !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+    
 }
 
 .navbar-brand .sto-digital-logo {
     width: auto;
-    height: 26px;
+    height: 48px !important;
     object-fit: contain;
     display: block;
 }
@@ -7735,7 +7750,7 @@ input.audit__input {
 }
 
 .pythontechnologyIcon {
-    width: 100px;
+    width: 47px;
 }
 
 .technologyIcon1 {
@@ -7913,9 +7928,9 @@ p.callus i {
 .navbar-expand-md .ul-menu .headerBtn a {
     font-size: 12px;
     font-weight: bold;
-    background: linear-gradient(45deg, #fff, #ffab00, #ffc107, #fff);
+    background: linear-gradient(45deg, #fff, #166ce7, #02326a, #fff);
     background-size: 300% 300%;
-    border: 1px solid #ffc107;
+    border: 1px solid #166ce7;
     border-radius: .25rem;
     display: inline-flex;
     justify-content: center;
@@ -7923,15 +7938,19 @@ p.callus i {
     line-height: 1;
     height: 42px;
     padding: 6px 16px;
-    color: #090218;
+    min-width: 190px;
+    color: #ffffff !important;
     position: relative;
     overflow: hidden;
     z-index: 1;
     animation: gentleWave 6s ease infinite;
     transition: all 0.3s ease;
-    margin-top: 8px;
+    margin-top: 0px;
+    white-space: nowrap;
 }
-
+.mobile-language-dropdown {
+  display: none;
+}
 .chatbot-button:focus {
     outline: none;
     border: none;
@@ -8071,8 +8090,9 @@ p.callus i {
 .navbar-expand-md .ul-menu .headerBtn a:hover {
     animation: strongWave 2s ease infinite;
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3);
+    box-shadow: 0 4px 8px rgba(22, 108, 231, 0.3);
     text-decoration: none;
+    color: #ffffff !important;
 }
 
 @keyframes strongWave {
@@ -8494,7 +8514,7 @@ p.callus i {
     }
 
     .service-footer {
-        top: 70px;
+        top: 0;
     }
 
     .item-owl-carouel {
@@ -9325,7 +9345,7 @@ p.callus i {
     /*New home*/
     .home-new .cta .cta-img,
     .home-new .image-scroller {
-        height: 53vh;
+        height: clamp(380px, 55vh, 600px);
     }
 
     .home-new .bg-video__content {
@@ -10273,8 +10293,9 @@ p.callus i {
         margin-bottom: 30px;
     }
 
+    .home-new .cta .cta-img,
     .home-new .image-scroller {
-        height: 89vh;
+        height: clamp(350px, 60vh, 500px);
     }
 
     .home-dubai .first_nav_content {
@@ -11127,7 +11148,7 @@ p.callus i {
 
     .home-new .cta .cta-img,
     .home-new .image-scroller {
-        height: 90vh;
+        height: clamp(320px, 60vh, 450px);
     }
 
     .home-new .cta .cta-img .content-center h2,
@@ -11843,9 +11864,9 @@ p.callus i {
 .navbar-expand-md .ul-menu .headerBtnBlue a {
     font-size: 12px;
     font-weight: bold;
-    background: linear-gradient(45deg, #0250a9, #166ce7, #5990f7, #0250a9);
+    background: linear-gradient(45deg, #fff, #ffab00, #ffc107, #fff);
     background-size: 300% 300%;
-    border: 1px solid #166ce7;
+    border: 1px solid #ffc107;
     border-radius: .25rem;
     display: inline-flex;
     justify-content: center;
@@ -11853,7 +11874,8 @@ p.callus i {
     line-height: 1;
     height: 42px;
     padding: 6px 16px;
-    color: #ffffff !important;
+    min-width: 190px;
+    color: #090218 !important;
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -11867,9 +11889,9 @@ p.callus i {
 .navbar-expand-md .ul-menu .headerBtnBlue a:hover {
     animation: strongWave 2s ease infinite;
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(22, 108, 231, 0.3);
+    box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3);
     text-decoration: none;
-    color: #ffffff !important;
+    color: #090218 !important;
 }
 
 @keyframes gentleWave {
@@ -11972,4 +11994,405 @@ p.callus i {
     width: auto !important;
     height: auto !important;
     margin: auto;
+}
+
+/* --- Premium Portfolio Card Styling --- */
+.portfolio-card {
+    border: none !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-card .card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 62.5%; /* 8:5 Aspect Ratio */
+}
+
+.portfolio-card .card-img-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.portfolio-card:hover .card-img-wrapper img {
+    transform: scale(1.08);
+}
+
+.portfolio-card .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(9, 2, 24, 0.9) 0%, rgba(9, 2, 24, 0.3) 50%, rgba(9, 2, 24, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+}
+
+.portfolio-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.portfolio-card .card-overlay h5 {
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 4px;
+    font-size: 18px;
+    transform: translateY(15px);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.portfolio-card:hover .card-overlay h5 {
+    transform: translateY(0);
+}
+
+.portfolio-card .card-overlay span {
+    color: #ffc107;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: translateY(15px);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) 0.05s;
+}
+
+.portfolio-card:hover .card-overlay span {
+    transform: translateY(0);
+}
+
+/* Custom Header Buttons Alignment for React Pages (.navbar-expand-xl) */
+.navbar-expand-xl .header-buttons-group .headerBtn,
+.navbar-expand-xl .header-buttons-group .headerBtnBlue {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-expand-xl .header-buttons-group .headerBtn a {
+    font-size: 12px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #fff, #166ce7, #02326a, #fff);
+    background-size: 300% 300%;
+    border: 1px solid #166ce7;
+    border-radius: .25rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    height: 42px;
+    padding: 6px 16px;
+    min-width: 190px;
+    color: #ffffff !important;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    animation: gentleWave 6s ease infinite;
+    transition: all 0.3s ease;
+    margin-top: 0px;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.navbar-expand-xl .header-buttons-group .headerBtnBlue a {
+    font-size: 12px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #fff, #ffab00, #ffc107, #fff);
+    background-size: 300% 300%;
+    border: 1px solid #ffc107;
+    border-radius: .25rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    height: 42px;
+    padding: 6px 16px;
+    min-width: 190px;
+    color: #090218 !important;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    animation: gentleWave 6s ease infinite;
+    transition: all 0.3s ease;
+    margin-top: 0px;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.navbar-expand-xl .header-buttons-group .headerBtn a:hover {
+    animation: strongWave 2s ease infinite;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(22, 108, 231, 0.3);
+    text-decoration: none;
+    color: #ffffff !important;
+}
+
+.navbar-expand-xl .header-buttons-group .headerBtnBlue a:hover {
+    animation: strongWave 2s ease infinite;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3);
+    text-decoration: none;
+    color: #090218 !important;
+}
+
+.navbar-expand-xl .header-buttons-group .headerBtn a::after,
+.navbar-expand-xl .header-buttons-group .headerBtnBlue a::after {
+    content: none !important;
+}
+
+/* Fallback for testimonials and blogs when Owl Carousel is not initialized or still loading in React */
+.owl-carousel.owl-one:not(.owl-loaded),
+.owl-carousel.owl-three:not(.owl-loaded) {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+    justify-content: center !important;
+    opacity: 1 !important;
+}
+
+.owl-carousel.owl-one:not(.owl-loaded) .item {
+    flex: 1 1 300px !important;
+    max-width: 380px !important;
+    display: block !important;
+}
+
+.owl-carousel.owl-three:not(.owl-loaded) .item {
+    flex: 1 1 300px !important;
+    max-width: 48% !important;
+    display: block !important;
+}
+/* =========================================
+   GOOGLE TRANSLATE FIXES
+   ========================================= */
+
+/* Hide the default Google Translate widget UI */
+#google_translate_element,
+.goog-te-gadget,
+.goog-te-gadget-simple,
+.goog-te-banner-frame,
+.goog-logo-link {
+  display: none !important;
+}
+
+/* Hide Google top banner injected iframe */
+iframe.goog-te-banner-frame {
+  display: none !important;
+}
+
+/* Prevent page from being pushed down by Google */
+body {
+  top: 0 !important;
+  position: static !important;
+  overflow-x: hidden;
+}
+
+/* Sometimes Google adds translated wrapper */
+.skiptranslate {
+  display: none !important;
+}
+
+/* Keep translated text normal */
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Prevent translate widget from affecting navbar/header width */
+.language-dropdown-wrapper {
+  position: relative;
+  z-index: 1000;
+}
+
+/* Safer navbar wrapping on medium widths */
+.header-buttons-group {
+  flex-wrap: nowrap;
+}
+
+/* Prevent weird overflow from long translated labels */
+.second-navbar,
+.navbar,
+.mobile-nav,
+.ul-menu {
+  overflow-x: clip;
+}
+.desktop-language-dropdown .desktop-lang-menu {
+  width: 110px;
+  top: 96%;
+  right: 273px;
+  left: auto;
+}
+/* Mobile fix */
+@media only screen and (max-width: 767px) {
+    .owl-carousel.owl-three:not(.owl-loaded) .item {
+        max-width: 100% !important;
+        flex: 1 1 100% !important;
+    }
+}
+
+/* Adjust layout on high-res standard desktops (1200px - 1550px) to prevent wrapping */
+@media only screen and (min-width: 1200px) and (max-width: 1550px) {
+    .navbar-expand-xl .ul-menu > .main-nav-item {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+    }
+    .navbar-expand-xl .ul-menu .main-nav-item a {
+        font-size: 11px !important;
+    }
+    .navbar-expand-xl .header-buttons-group .headerBtn a,
+    .navbar-expand-xl .header-buttons-group .headerBtnBlue a {
+        font-size: 11px !important;
+        padding: 6px 10px !important;
+        min-width: 140px !important;
+        height: 38px !important;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+    .navbar-expand-xl .header-buttons-group .headerBtn a,
+    .navbar-expand-xl .header-buttons-group .headerBtnBlue a {
+        font-size: 11px !important;
+        padding: 6px 12px !important;
+        height: 38px !important;
+        margin-top: 0px !important;
+        min-width: 150px !important;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .navbar-collapse.mobile-nav {
+        background-color: #ffffff;
+        padding: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        border-radius: 4px;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    
+    .navbar-expand-xl .ul-menu {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    .navbar-expand-xl .ul-menu .nav-item {
+        width: 100% !important;
+        margin-bottom: 10px !important;
+        margin-left: 0 !important;
+    }
+    
+    .navbar-expand-xl .header-buttons-group {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+        margin-top: 15px !important;
+        padding-top: 15px !important;
+        border-top: 1px solid #eaeaea !important;
+    }
+
+    .navbar-expand-xl .header-buttons-group .headerBtn,
+    .navbar-expand-xl .header-buttons-group .headerBtnBlue {
+        display: flex !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .navbar-expand-xl .header-buttons-group .headerBtn a,
+    .navbar-expand-xl .header-buttons-group .headerBtnBlue a {
+        width: 100% !important;
+        max-width: 300px !important;
+    }
+      .header-buttons-group {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .language-dropdown-wrapper {
+    margin-bottom: 10px;
+  }
+    .mobile-language-dropdown {
+   display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: 12px;
+    order: 2;
+    position: relative;
+  }
+
+  .mobile-language-dropdown .nav-link {
+     display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 6px 10px !important;
+    font-size: 16px !important;
+    font-weight: 700;
+    color: #2d4f7c !important;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .mobile-language-dropdown .lang-globe {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .mobile-lang-menu {
+    min-width: 90px;
+    border-radius: 10px;
+    border: 1px solid #edf2f7;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    padding: 8px 0;
+    top: 100% !important;
+    left: auto !important;
+    right: 90px !important;
+  }
+  .navbar.navbar-expand-xl {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  order: 1;
+}
+ .mobile-language-dropdown .mobile-lang-menu {
+    position: absolute !important;
+    top: calc(100% + 6px) !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    min-width: 90px;
+    border-radius: 10px;
+    border: 1px solid #edf2f7;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    padding: 8px 0;
+    text-align: center;
+  }
+
+
+.navbar-toggler {
+  order: 3;
+  margin-left: 0 !important;
+}
+
 }

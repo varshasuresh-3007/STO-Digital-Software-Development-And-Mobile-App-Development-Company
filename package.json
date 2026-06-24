@@ -4,18 +4,22 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npx serve public",
-    "start": "npx serve public",
-    "build": "rm -rf dist && cp -r public dist",
-    "preview": "npx serve public"
+    "dev": "vite",
+    "build": "vite build && node -e \"try { require('fs').unlinkSync('dist/index.html.bak') } catch(e) {}\"",
+    "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "i18next": "^26.3.1",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
-    "react-router-dom": "^7.15.0"
+    "react-i18next": "^17.0.8",
+    "react-router-dom": "^7.15.0",
+    "zustand": "^5.0.14"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.1",
+    "cheerio": "^1.2.0",
     "serve": "^14.2.1",
     "vite": "^8.0.10"
   }
