@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
 export default function Header() {
+  // Reset language to EN on fresh session (browser reopened / new visit)
+  if (typeof window !== 'undefined' && document.cookie.indexOf('sto_session=active') === -1) {
+    localStorage.setItem('siteLanguage', 'en');
+    document.cookie = 'sto_session=active; path=/;';
+  }
+
   const [currentLanguage, setCurrentLanguage] = useState(
-    sessionStorage.getItem('siteLanguage') || 'en'
+    localStorage.getItem('siteLanguage') || 'en'
   );
 
   const languageLabelMap = {
@@ -41,7 +47,7 @@ export default function Header() {
       document.cookie = `googtrans=${cookieValue}; path=/; domain=${rootDomain};`;
     }
 
-    sessionStorage.setItem('googtrans', cookieValue);
+    localStorage.setItem('googtrans', cookieValue);
   };
 
   const clearGoogleTranslateCookies = () => {
@@ -56,12 +62,12 @@ export default function Header() {
       document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${rootDomain};`;
     }
 
-    sessionStorage.removeItem('googtrans');
+    localStorage.removeItem('googtrans');
   };
 
   const changeLanguage = (langCode) => {
     setCurrentLanguage(langCode);
-    sessionStorage.setItem('siteLanguage', langCode);
+    localStorage.setItem('siteLanguage', langCode);
     closeMobileMenu();
 
     if (langCode === 'en') {
@@ -75,7 +81,12 @@ export default function Header() {
   };
 
   useEffect(() => {
-    const savedLang = sessionStorage.getItem('siteLanguage') || 'en';
+    // Reset language to EN on fresh session (browser reopened / new visit)
+    if (document.cookie.indexOf('sto_session=active') === -1) {
+      localStorage.setItem('siteLanguage', 'en');
+      document.cookie = 'sto_session=active; path=/;';
+    }
+    const savedLang = localStorage.getItem('siteLanguage') || 'en';
     setCurrentLanguage(savedLang);
     if (savedLang === 'en') {
       clearGoogleTranslateCookies();

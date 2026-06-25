@@ -76,6 +76,13 @@ export default function Layout() {
           !href.startsWith('/#') &&
           href !== 'javascript:void(0);'
         ) {
+          // If language is not English, bypass SPA routing to let the browser trigger a full page reload.
+          // This ensures Google Translate runs cleanly on the new route without React state conflicts.
+          const siteLang = localStorage.getItem('siteLanguage') || 'en';
+          if (siteLang !== 'en') {
+            return;
+          }
+
           e.preventDefault();
           navigate(href);
         }

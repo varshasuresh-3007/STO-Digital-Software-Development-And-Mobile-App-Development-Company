@@ -5,7 +5,7 @@ import en from "./locales/en.json";
 import sv from "./locales/sv.json";
 import fi from "./locales/fi.json";
 
-const savedLanguage = sessionStorage.getItem("siteLanguage") || "en";
+const savedLanguage = localStorage.getItem("siteLanguage") || "en";
 
 i18n
   .use(initReactI18next)
