@@ -201,14 +201,14 @@ export default function FooterServicesSection() {
                 <a href="https://twitter.com/i/flow/login" target="_blank">
                     <img src="/debug/img/twitter-1.svg" alt="twitter" className="img-fluid mr-sm-1 mr-md-2" />
                 </a>
-                <a href="https://www.linkedin.com/login" target="_blank">
-                    <img src="/debug/img/linkedin-1.svg" alt="linkedin" className="img-fluid mr-sm-1 mr-md-2" />
-                </a>
                 <a href="https://www.pinterest.com/login/" target="_blank">
                     <img src="/debug/img/pinterest.svg" alt="pinterest" className="img-fluid mr-sm-1 mr-md-2" />
                 </a>
                 <a href="https://www.instagram.com/accounts/login/" target="_blank">
                     <img src="/debug/img/instagram.svg" alt="instagram" className="img-fluid mr-sm-1 mr-md-2" />
+                </a>
+                <a href="https://www.linkedin.com/company/sto-digitaloffical/?viewAsMember=true" target="_blank" rel="noopener noreferrer">
+                    <img src="/debug/img/linkedin-1.svg" alt="linkedin" className="img-fluid mr-sm-1 mr-md-2" />
                 </a>
                 
             </div>

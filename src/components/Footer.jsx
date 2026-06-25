@@ -100,7 +100,10 @@ export default function Footer() {
                               <i className="fab fa-facebook-f mr-4" style={{color: '#1877F2', fontSize: '20px', transition: 'transform 0.2s'}} onMouseOver={e => e.currentTarget.style.transform = 'scale(1.2)'} onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}></i>
                           </a>
                           <a href="https://www.instagram.com/stodigital.eu/" target="_blank" rel="noopener noreferrer">
-                              <i className="fab fa-instagram mr-2 mr-md-2" style={{color: '#E4405F', fontSize: '20px', transition: 'transform 0.2s'}} onMouseOver={e => e.currentTarget.style.transform = 'scale(1.2)'} onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}></i>
+                              <i className="fab fa-instagram mr-4" style={{color: '#E4405F', fontSize: '20px', transition: 'transform 0.2s'}} onMouseOver={e => e.currentTarget.style.transform = 'scale(1.2)'} onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}></i>
+                          </a>
+                          <a href="https://www.linkedin.com/company/sto-digitaloffical/?viewAsMember=true" target="_blank" rel="noopener noreferrer">
+                              <i className="fab fa-linkedin-in mr-2 mr-md-2" style={{color: '#0A66C2', fontSize: '20px', transition: 'transform 0.2s'}} onMouseOver={e => e.currentTarget.style.transform = 'scale(1.2)'} onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}></i>
                           </a>
                       </div>
                   </div>

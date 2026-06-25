@@ -132,9 +132,27 @@ export default function Header() {
                 rel="noopener noreferrer"
               >
                 <i
-                  className="fab fa-instagram mr-sm-1 mr-md-2"
+                  className="fab fa-instagram mr-4"
                   style={{
                     color: '#E4405F',
+                    fontSize: '18px',
+                    verticalAlign: 'middle',
+                    transition: 'transform 0.2s'
+                  }}
+                  onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.2)')}
+                  onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+                ></i>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/company/sto-digitaloffical/?viewAsMember=true"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i
+                  className="fab fa-linkedin-in mr-sm-1 mr-md-2"
+                  style={{
+                    color: '#0A66C2',
                     fontSize: '18px',
                     verticalAlign: 'middle',
                     transition: 'transform 0.2s'

@@ -19,7 +19,6 @@ export default function MachineLearningCompaniesInVantaa() {
   return (
     <>
       <style>{`
-        
         .seo-percentage, .seo-percentage_img {
           background-image: url('/debug/img/pattern-bg@3x.jpg');
         }
