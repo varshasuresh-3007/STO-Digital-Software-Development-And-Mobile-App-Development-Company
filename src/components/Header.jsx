@@ -188,8 +188,9 @@ export default function Header() {
 
         {/* MOBILE / TABLET LANGUAGE DROPDOWN */}
         <div
-          className="mobile-language-dropdown dropdown notranslate"
+          className="mobile-language-dropdown dropdown notranslate d-xl-none"
           translate="no"
+          style={{ position: 'relative' }}
         >
           <a
             className="nav-link dropdown-toggle text-dark font-weight-bold d-flex align-items-center justify-content-center"
@@ -208,6 +209,14 @@ export default function Header() {
           <div
             className="dropdown-menu dropdown-menu-right mobile-lang-menu"
             aria-labelledby="mobileLangDropdown"
+            style={{
+              width: '120px',
+              minWidth: '120px',
+              position: 'absolute',
+              top: '100%',
+              right: 0,
+              left: 'auto',
+            }}
           >
             <a
               className="dropdown-item py-2 text-center"
@@ -285,7 +294,7 @@ export default function Header() {
             <li className="nav-item main-nav-item pb-0 navbar-items-mobile">
               <a className="nav-link text-dark pb-2" href="/technology-blogs">Blogs</a>
             </li>
-            <li className="nav-item main-nav-item pb-0 navbar-items-mobile">
+            <li className="nav-item main-nav-item pb-0 navbar-items-mobile d-xl-none">
               <a
                 className="nav-link pb-2 font-weight-bold"
                 href="/book-consultation"
@@ -306,7 +315,10 @@ export default function Header() {
             translate="no"
           >
             {/* DESKTOP LANGUAGE DROPDOWN */}
-            <li className="nav-item dropdown ml-2 mr-2 language-dropdown-wrapper desktop-language-dropdown d-none d-xl-block">
+            <li 
+              className="nav-item dropdown ml-2 mr-2 language-dropdown-wrapper desktop-language-dropdown d-none d-xl-block"
+              style={{ position: 'relative' }}
+            >
               <a
                 className="nav-link dropdown-toggle text-dark font-weight-bold d-flex align-items-center"
                 href="#"
@@ -324,6 +336,14 @@ export default function Header() {
               <div
                 className="dropdown-menu dropdown-menu-right desktop-lang-menu"
                 aria-labelledby="langDropdown"
+                style={{
+                  width: '120px',
+                  minWidth: '120px',
+                  position: 'absolute',
+                  top: '100%',
+                  right: 0,
+                  left: 'auto',
+                }}
               >
                 <a
                   className="dropdown-item py-2 text-center"

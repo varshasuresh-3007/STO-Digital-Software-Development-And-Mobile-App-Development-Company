@@ -12251,11 +12251,27 @@ body {
 .ul-menu {
   overflow-x: clip;
 }
+.desktop-language-dropdown {
+  position: relative !important;
+}
 .desktop-language-dropdown .desktop-lang-menu {
-  width: 110px;
-  top: 96%;
-  right: 273px;
-  left: auto;
+  width: 120px !important;
+  min-width: 120px !important;
+  position: absolute !important;
+  top: 100% !important;
+  right: 0 !important;
+  left: auto !important;
+}
+.mobile-language-dropdown {
+  position: relative !important;
+}
+.mobile-language-dropdown .mobile-lang-menu {
+  width: 120px !important;
+  min-width: 120px !important;
+  position: absolute !important;
+  top: 100% !important;
+  right: 0 !important;
+  left: auto !important;
 }
 /* Mobile fix */
 @media only screen and (max-width: 767px) {
