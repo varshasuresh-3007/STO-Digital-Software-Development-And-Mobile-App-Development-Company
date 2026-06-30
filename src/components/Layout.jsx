@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
+import CookieConsent from './CookieConsent/CookieConsent';
 import { useAppStore } from '../store/useAppStore';
 import { sendEnquiryEmail } from '../utils/email';
 
@@ -324,6 +325,7 @@ export default function Layout() {
         <Outlet />
       </div>
       <Footer />
+      <CookieConsent />
     </>
   );
 }

@@ -1,0 +1,444 @@
+/* Cookie Consent Styles */
+
+/* --- Banner Styles --- */
+.sto-cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.08);
+  border-top: 1px solid #eef2f6;
+  z-index: 10000;
+  padding: 24px 32px;
+  font-family: 'Open Sans', 'Nunito Sans', sans-serif;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+}
+
+.sto-cookie-banner.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.sto-cookie-banner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.sto-cookie-banner-content {
+  flex: 1;
+  text-align: left;
+}
+
+.sto-cookie-banner-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #02326a; /* STO Digital Dark Blue */
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.sto-cookie-banner-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4a5568; /* Slate Gray */
+  margin: 0;
+}
+
+.sto-cookie-banner-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Button styles */
+.sto-cookie-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 1.5px solid transparent;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+}
+
+.sto-cookie-btn-primary {
+  background: linear-gradient(135deg, #166ce7 0%, #02326a 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(22, 108, 231, 0.2);
+}
+
+.sto-cookie-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(22, 108, 231, 0.3);
+}
+
+.sto-cookie-btn-primary:focus-visible {
+  box-shadow: 0 0 0 3px rgba(22, 108, 231, 0.4);
+}
+
+.sto-cookie-btn-secondary {
+  background-color: #ffffff;
+  color: #4a5568;
+  border-color: #cbd5e1;
+}
+
+.sto-cookie-btn-secondary:hover {
+  background-color: #f8fafc;
+  color: #334155;
+  border-color: #94a3b8;
+}
+
+.sto-cookie-btn-secondary:focus-visible {
+  box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.4);
+}
+
+.sto-cookie-btn-link {
+  background: none;
+  border: none;
+  color: #166ce7;
+  padding: 8px 12px;
+  min-width: auto;
+  text-decoration: underline;
+}
+
+.sto-cookie-btn-link:hover {
+  color: #02326a;
+}
+
+.sto-cookie-btn-link:focus-visible {
+  outline: 2px dashed #166ce7;
+  outline-offset: 2px;
+}
+
+/* --- Preferences Modal Styles --- */
+.sto-cookie-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(2, 50, 106, 0.4); /* STO brand color overlay */
+  backdrop-filter: blur(4px);
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sto-cookie-modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sto-cookie-modal {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 640px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  transform: scale(0.92);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  overflow: hidden;
+}
+
+.sto-cookie-modal-overlay.show .sto-cookie-modal {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.sto-cookie-modal-header {
+  background: linear-gradient(135deg, #02326a 0%, #166ce7 100%);
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  position: relative;
+}
+
+.sto-cookie-modal-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.sto-cookie-modal-close {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.8;
+  padding: 0;
+  transition: opacity 0.2s ease;
+  outline: none;
+}
+
+.sto-cookie-modal-close:hover {
+  opacity: 1;
+}
+
+.sto-cookie-modal-close:focus-visible {
+  outline: 2px dashed #ffffff;
+  outline-offset: 4px;
+}
+
+.sto-cookie-modal-body {
+  padding: 28px;
+  overflow-y: auto;
+  flex: 1;
+  text-align: left;
+}
+
+.sto-cookie-modal-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4a5568;
+  margin-bottom: 24px;
+}
+
+/* Category lists */
+.sto-cookie-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sto-cookie-category-item {
+  border: 1.5px solid #e2eaf8;
+  border-radius: 12px;
+  padding: 16px;
+  background-color: #fcfdfe;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.sto-cookie-category-item:hover {
+  border-color: #cbd5e1;
+  background-color: #ffffff;
+}
+
+.sto-cookie-category-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+
+.sto-cookie-category-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sto-cookie-category-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #02326a;
+  margin: 0;
+}
+
+.sto-cookie-category-status {
+  font-size: 12px;
+  font-weight: 600;
+  color: #399e21;
+  background-color: rgba(57, 158, 33, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.sto-cookie-category-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Custom Toggle Switch */
+.sto-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.sto-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.sto-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cbd5e1;
+  transition: .3s;
+  border-radius: 24px;
+}
+
+.sto-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .3s;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sto-switch input:checked + .sto-slider {
+  background-color: #166ce7;
+}
+
+.sto-switch input:focus-visible + .sto-slider {
+  box-shadow: 0 0 0 3px rgba(22, 108, 231, 0.4);
+}
+
+.sto-switch input:checked + .sto-slider:before {
+  transform: translateX(20px);
+}
+
+.sto-switch input:disabled + .sto-slider {
+  background-color: #e2e8f0;
+  cursor: not-allowed;
+}
+
+.sto-switch input:disabled + .sto-slider:before {
+  background-color: #94a3b8;
+}
+
+/* Modal Footer */
+.sto-cookie-modal-footer {
+  padding: 20px 28px;
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* --- Floating Settings Trigger Button --- */
+.sto-cookie-trigger {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #166ce7 0%, #02326a 100%);
+  box-shadow: 0 4px 16px rgba(2, 50, 106, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 9999;
+  border: none;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  outline: none;
+}
+
+.sto-cookie-trigger:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 50, 106, 0.45);
+}
+
+.sto-cookie-trigger:focus-visible {
+  box-shadow: 0 0 0 3px rgba(22, 108, 231, 0.5);
+  outline: none;
+}
+
+.sto-cookie-trigger svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 767px) {
+  .sto-cookie-banner {
+    padding: 16px;
+  }
+  
+  .sto-cookie-banner-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  
+  .sto-cookie-banner-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .sto-cookie-banner-actions .sto-cookie-btn {
+    width: 100%;
+  }
+
+  .sto-cookie-modal {
+    max-height: 95vh;
+    border-radius: 16px;
+  }
+  
+  .sto-cookie-modal-header {
+    padding: 16px 20px;
+  }
+  
+  .sto-cookie-modal-body {
+    padding: 20px;
+  }
+  
+  .sto-cookie-modal-footer {
+    padding: 16px 20px;
+    flex-direction: column-reverse;
+  }
+  
+  .sto-cookie-modal-footer .sto-cookie-btn {
+    width: 100%;
+  }
+
+  .sto-cookie-trigger {
+    bottom: 16px;
+    left: 16px;
+    width: 44px;
+    height: 44px;
+  }
+}

@@ -76,6 +76,9 @@ export default function Footer() {
                           <li>
                               <a href="/sitemap.xml">Sitemap</a>
                           </li>
+                          <li>
+                              <a href="javascript:void(0);" onClick={() => window.dispatchEvent(new CustomEvent('stoOpenCookiePreferences'))}>Cookie Settings</a>
+                          </li>
                       </ul>
                   </div>
 
